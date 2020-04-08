@@ -60,7 +60,6 @@
 </template>
 
 <script>
-    import common from '../../util/common';
     import request from '../../util/request';
 
     export default {
@@ -137,7 +136,7 @@
 
         .book-frame {
             width: 100%;
-            height: calc(100% - (100rpx + env(safe-area-inset-bottom) / 2 + 1px));
+            height: calc(100% - (100upx + env(safe-area-inset-bottom) / 2 + 1px));
             overflow-y: auto;
 
             .cu-card {
@@ -150,14 +149,14 @@
                     .image {
                         width: 100%;
                         height: 100%;
-                        padding: 30rpx;
+                        padding: 30upx;
                         box-sizing: border-box;
                         margin: unset;
 
                         .image-size {
-                            width: 165rpx;
-                            height: 220rpx;
-                            border-radius: 6rpx;
+                            width: 165upx;
+                            height: 220upx;
+                            border-radius: 6upx;
                         }
 
                         .cu-tag {
@@ -170,20 +169,20 @@
             .author-books {
                 white-space: nowrap; // 滚动必须加的属性
                 width: 100%;
-                padding: 20rpx;
+                padding: 20upx;
                 margin: 0 auto;
 
                 .author-book {
                     width: 24%;
-                    margin-right: 20rpx;
+                    margin-right: 20upx;
                     display: inline-block;
                     vertical-align: top;
 
                     .avatar-img {
                         display: inline-block;
-                        height: 220rpx;
-                        width: 165rpx;
-                        border-radius: 6rpx;
+                        height: 220upx;
+                        width: 165upx;
+                        border-radius: 6upx;
                         position: relative;
 
                         .custom-image {

@@ -86,8 +86,8 @@
 
     export default {
         name: 'SimpleRead',
-        components: { UniTag, UniIcon },
-        data () {
+        components: {UniTag, UniIcon},
+        data() {
             return {
                 isShowMask: false,
                 skin: {
@@ -108,7 +108,7 @@
                         pageBgColor: '#d8c9aa',//背景色
                         maskBgColor: '#f3e4c3',//遮罩层色
                         fontColor: '#3c2506',//字体颜色
-                        color: '#e0d1aa',//选择圆圈颜色
+                        color: '#e0d1aa'//选择圆圈颜色
                     },
                     {
                         pageBgColor: '#daba94',//背景色
@@ -141,9 +141,9 @@
                 scrollTop: 0
             };
         },
-        onLoad (options) {
+        onLoad(options) {
             this.novels = JSON.parse(options.novels);
-            uni.setNavigationBarTitle({ title: this.novels.title });
+            uni.setNavigationBarTitle({title: this.novels.title});
             if (uni.getStorageSync('skin')) {
                 this.skin = uni.getStorageSync('skin');
             }
@@ -152,16 +152,16 @@
             this.loadChapterInfoBtn();
         },
         methods: {
-            loadChapterInfoBtn () {
-                uni.showLoading({ title: 'loading...', mask: true });
+            loadChapterInfoBtn() {
+                uni.showLoading({title: 'loading...', mask: true});
                 let params;
                 let url;
                 if (uni.getStorageSync(this.novels.novelsId + ':scrollInfo')) {
                     this.storageInfo = uni.getStorageSync(this.novels.novelsId + ':scrollInfo');
-                    params = { novelsId: this.novels.novelsId, chaptersId: this.storageInfo.chaptersId };
+                    params = {novelsId: this.novels.novelsId, chaptersId: this.storageInfo.chaptersId};
                     url = '/chapters/readMore';
                 } else {
-                    params = { novelsId: this.novels.novelsId };
+                    params = {novelsId: this.novels.novelsId};
                     url = '/chapters/firstChapter';
                 }
                 request.get(url, params).then(data => {
@@ -178,7 +178,7 @@
                     uni.hideLoading();
                 });
             },
-            topBtn () {
+            topBtn() {
                 // 如果 已经登陆， 则在已经加入书架的前提下更新阅读时间
                 if (this.$store.state.userInfo) {
                     let params = {
@@ -187,12 +187,13 @@
                             novelsId: this.novels.novelsId
                         }
                     };
-                    request.post('/relation/topBookcase', params).catch(() => {});
+                    request.post('/relation/topBookcase', params).catch(() => {
+                    });
                 }
             },
-            queryNewChapter (chaptersId) {
-                let params = { novelsId: '', chaptersId: chaptersId };
-                uni.showLoading({ title: 'loading...', mask: true });
+            queryNewChapter(chaptersId) {
+                let params = {novelsId: '', chaptersId: chaptersId};
+                uni.showLoading({title: 'loading...', mask: true});
                 this.nodes = '';
                 request.get('/chapters/readMore', params).then(data => {
                     if (data.status === 200 && data.data.length) {
@@ -203,23 +204,23 @@
                     uni.hideLoading();
                 });
             },
-            readMore (type) {
+            readMore(type) {
                 let index = this.convertChapterIndex(this.chapterInfo.chaptersId);
                 if (type === 'previous') {
                     if (index > 0) {
                         this.queryNewChapter(this.directory[--index].chaptersId);
                     } else {
-                        uni.showToast({ title: '已到顶了!', duration: 1000, icon: 'none' });
+                        uni.showToast({title: '已到顶了!', duration: 1000, icon: 'none'});
                     }
                 } else {
                     if (index < this.directory.length - 1) {
                         this.queryNewChapter(this.directory[++index].chaptersId);
                     } else {
-                        uni.showToast({ title: '已到底了!', duration: 1000, icon: 'none' });
+                        uni.showToast({title: '已到底了!', duration: 1000, icon: 'none'});
                     }
                 }
             },
-            convertChapterIndex (chaptersId) {
+            convertChapterIndex(chaptersId) {
                 let result = 0;
                 for (let i = 0, len = this.directory.length; i < len; i++) {
                     if (this.directory[i].chaptersId === chaptersId) {
@@ -229,7 +230,7 @@
                 }
                 return result;
             },
-            modifyNode (type) {
+            modifyNode(type) {
                 this.nodes = `<div class="node-title">${this.chapterInfo.chapter}</div><div class="node-content">${this.chapterInfo.content}</div>`;
                 this.scrollTop = Math.random();
                 this.$nextTick(() => {
@@ -241,13 +242,13 @@
                 });
             },
             //点击中间
-            clickCenter () {
+            clickCenter() {
                 this.isShowMask = !this.isShowMask;
             },
-            scrollOn (e) {
+            scrollOn(e) {
                 this.setScrollInfo(e.detail.scrollTop);
             },
-            setScrollInfo (scrollTop) {
+            setScrollInfo(scrollTop) {
                 try {
                     let storage = {
                         chapter: this.chapterInfo.chapter,
@@ -260,13 +261,13 @@
                     // error
                 }
             },
-            directoryBtn () {
+            directoryBtn() {
                 uni.navigateTo({
                     url: '/pages/reading/Directory?directory=' + JSON.stringify(this.directory) + '&currentChapterId=' + this.chapterInfo.chaptersId
                 });
             },
             //滑块设置字体间距或大小
-            sliderChange (e, type) {
+            sliderChange(e, type) {
                 if (type === 'fontSize') {
                     this.skin.fontSize = e.detail.value;
                 } else {
@@ -277,7 +278,7 @@
                     data: this.skin
                 });
             },
-            setSkin () {
+            setSkin() {
                 let titleFontColor = '#000000';
                 if (this.skin.pageBgColor === '#333b3d') {
                     titleFontColor = '#ffffff';
@@ -285,14 +286,14 @@
                 uni.setNavigationBarColor({
                     // 字体颜色 仅支持 #ffffff 和 #000000
                     frontColor: titleFontColor,
-                    backgroundColor: this.skin.pageBgColor,
-                });
-                uni.setBackgroundColor({
                     backgroundColor: this.skin.pageBgColor
                 });
+                // uni.setBackgroundColor({
+                //     backgroundColor: this.skin.pageBgColor
+                // });
             },
             //修改背景颜色
-            changeBackground (index) {
+            changeBackground(index) {
                 this.skin.currentSkinIndex = index;
                 this.skin.pageBgColor = this.colorArr[index].pageBgColor;//背景颜色
                 this.skin.fontColor = this.colorArr[index].fontColor;//字体颜色
@@ -302,7 +303,7 @@
                     key: 'skin',
                     data: this.skin
                 });
-            },
+            }
         }
     };
 </script>
@@ -312,10 +313,10 @@
 
         .scroll-content {
             height: 100%;
-            padding: 0 16rpx;
+            padding: 0 16upx;
 
             .read-content {
-                min-height: 1100rpx;
+                min-height: 1100upx;
             }
         }
 
@@ -327,11 +328,11 @@
 
             .cuIcon-refresh {
                 text-align: center;
-                font-size: 100rpx;
+                font-size: 100upx;
             }
 
             .load-text {
-                font-size: 30rpx;
+                font-size: 30upx;
             }
         }
 
@@ -344,9 +345,9 @@
             z-index: 1000;
 
             .left-btn-border, .left-btn-border-2 {
-                line-height: 45rpx;
-                width: 40rpx;
-                height: 300rpx;
+                line-height: 45upx;
+                width: 40upx;
+                height: 300upx;
             }
 
             .left-btn-border:before, .left-btn-border-2:before {
@@ -374,9 +375,9 @@
             z-index: 1000;
 
             .right-btn-border, .right-btn-border-2 {
-                line-height: 45rpx;
-                width: 40rpx;
-                height: 300rpx;
+                line-height: 45upx;
+                width: 40upx;
+                height: 300upx;
             }
 
             .right-btn-border:before, .right-btn-border-2:before {
@@ -397,7 +398,7 @@
 
         .mask-top {
             position: fixed;
-            height: 40rpx;
+            height: 40upx;
             transition: all 0.2s;
             width: 100%;
             z-index: 1000;
@@ -413,7 +414,7 @@
 
         .mask-bottom {
             position: fixed;
-            height: 270rpx;
+            height: 270upx;
             transition: all 0.2s;
             width: 100%;
             z-index: 1000;
@@ -459,13 +460,13 @@
 
                 .v3-item {
                     height: 42px;
-                    padding: 0 30rpx;
+                    padding: 0 30upx;
                     display: flex;
                     justify-content: center;
                     align-items: center;
 
                     .cu-btn {
-                        width: 300rpx;
+                        width: 300upx;
                     }
                 }
             }
@@ -473,16 +474,16 @@
 
         /deep/ .node-title {
             font-weight: bold;
-            margin-bottom: 100rpx;
+            margin-bottom: 100upx;
         }
 
         /deep/ .node-content {
-            margin-bottom: 100rpx;
-            margin-bottom: 100rpx;
+            margin-bottom: 100upx;
+            margin-bottom: 100upx;
         }
 
         .letter-space {
-            letter-spacing: 40rpx;
+            letter-spacing: 40upx;
         }
     }
 

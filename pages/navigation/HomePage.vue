@@ -8,7 +8,7 @@
                         <custom-image class="image-size" :url="item.coverUrl"></custom-image>
                         <view class="desc">
                             <view class="title text-cut text-shadow">{{item.title}}</view>
-                            <view class="text-content">{{convertIntroduction(item.introduction)}}</view>
+                            <view class="text-content">{{item.introduction || '暂无简介...'}}</view>
                             <view>
                                 <view class="cu-tag bg-red light sm round">{{item.author || '未知'}}</view>
                                 <view class="cu-tag bg-green light sm round">{{item.category || '未知'}}
@@ -25,7 +25,6 @@
 
 <script>
     import request from '../../util/request';
-    import common from '../../util/common';
 
     export default {
         name: 'HomePage',
@@ -73,9 +72,6 @@
                         uni.stopPullDownRefresh();//得到数据后停止下拉刷新
                     }
                 });
-            },
-            convertIntroduction(introduction) {
-                return common.getIntroduction(introduction);
             },
             bookDetailBtn(novels) {
                 uni.navigateTo({url: '/pages/bookdetail/BookDetail?novels=' + JSON.stringify(novels)});
