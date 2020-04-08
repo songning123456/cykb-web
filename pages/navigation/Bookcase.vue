@@ -82,6 +82,9 @@
                 uni.stopPullDownRefresh();//得到数据后停止下拉刷新
             }
         },
+        onNavigationBarButtonTap(e) {
+            uni.navigateTo({url: '/pages/navigation/Search'});
+        },
         methods: {
             // ListTouch触摸开始
             touchStart (e) {

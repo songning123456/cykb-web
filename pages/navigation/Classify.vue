@@ -31,6 +31,9 @@
                 this.queryClassifyCount();
             }
         },
+        onNavigationBarButtonTap(e) {
+            uni.navigateTo({url: '/pages/navigation/Search'});
+        },
         methods: {
             convertTotal(arg0) {
                 let result = arg0;

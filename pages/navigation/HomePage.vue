@@ -44,6 +44,9 @@
         onPullDownRefresh() {
             this.queryHomePage('first');
         },
+        onNavigationBarButtonTap(e) {
+            uni.navigateTo({url: '/pages/navigation/Search'});
+        },
         methods: {
             queryHomePage(type) {
                 let params = Object.create(null);

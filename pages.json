@@ -3,17 +3,44 @@
     {
       "path": "pages/navigation/HomePage",
       "style": {
-        "navigationBarTitleText": "首页",
-        "navigationBarBackgroundColor": "#e54d42",
-        "enablePullDownRefresh": true
+        "enablePullDownRefresh": true,
+        "h5": {
+          "titleNView": {
+            "titleText": "首页",
+            "backgroundColor": "#e54d42",
+            "buttons": [
+              {
+                "type":"none",
+                "text":"\ue603",
+                "fontSrc": "/static/iconfont/search.ttf",
+                "float":"right"
+              }
+            ]
+          },
+          "pullToRefresh": {
+            "color": "#2BD009"
+          }
+        }
       }
     },
     {
       "path": "pages/navigation/Classify",
       "style": {
-        "navigationBarTitleText": "分类",
-        "navigationBarBackgroundColor": "#e54d42",
-        "disableScroll": true
+        "disableScroll": true,
+        "h5": {
+          "titleNView": {
+            "titleText": "分类",
+            "backgroundColor": "#e54d42",
+            "buttons": [
+              {
+                "type":"none",
+                "text":"\ue603",
+                "fontSrc": "/static/iconfont/search.ttf",
+                "float":"right"
+              }
+            ]
+          }
+        }
       }
     },
     {
@@ -27,9 +54,21 @@
     {
       "path": "pages/navigation/Bookcase",
       "style": {
-        "navigationBarTitleText": "书架",
-        "navigationBarBackgroundColor": "#e54d42",
-        "enablePullDownRefresh": true
+        "enablePullDownRefresh": true,
+        "h5": {
+          "titleNView": {
+            "titleText": "书架",
+            "backgroundColor": "#e54d42",
+            "buttons": [
+              {
+                "type":"none",
+                "text":"\ue603",
+                "fontSrc": "/static/iconfont/search.ttf",
+                "float":"right"
+              }
+            ]
+          }
+        }
       }
     },
     {
@@ -123,12 +162,6 @@
         "text": "分类"
       },
       {
-        "pagePath": "pages/navigation/Search",
-        "iconPath": "static/icon/commonSearch.png",
-        "selectedIconPath": "static/icon/selectedSearch.png",
-        "text": "搜索"
-      },
-      {
         "pagePath": "pages/navigation/Bookcase",
         "iconPath": "static/icon/commonBookcase.png",
         "selectedIconPath": "static/icon/selectedBookcase.png",
@@ -144,9 +177,11 @@
   },
   "condition": {
     "current": 2,
-    "list": [{
-      "name": "test",
-      "path": "pages/navigation/Search"
-    }]
+    "list": [
+      {
+        "name": "test",
+        "path": "pages/navigation/Search"
+      }
+    ]
   }
 }
