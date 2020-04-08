@@ -1,16 +1,155 @@
 {
-	"pages": [
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
-		}
-	],
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	}
+  "pages": [
+    {
+      "path": "pages/navigation/HomePage",
+      "style": {
+        "navigationBarTitleText": "首页",
+        "navigationBarBackgroundColor": "#e54d42",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/navigation/Classify",
+      "style": {
+        "navigationBarTitleText": "分类",
+        "navigationBarBackgroundColor": "#e54d42",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/navigation/Search",
+      "style": {
+        "navigationBarTitleText": "搜索",
+        "navigationBarBackgroundColor": "#e54d42",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/navigation/Bookcase",
+      "style": {
+        "navigationBarTitleText": "书架",
+        "navigationBarBackgroundColor": "#e54d42",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/navigation/My",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#e54d42",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/comment/Comment",
+      "style": {
+        "navigationBarTitleText": "意见反馈",
+        "navigationBarBackgroundColor": "#e54d42",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/login/Login",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "navigationBarBackgroundColor": "#e54d42",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/result/SearchResult",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationBarBackgroundColor": "#e54d42",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/settings/Settings",
+      "style": {
+        "navigationBarTitleText": "设置",
+        "navigationBarBackgroundColor": "#e54d42",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/bookdetail/BookDetail",
+      "style": {
+        "navigationBarTitleText": "书籍详情",
+        "navigationBarBackgroundColor": "#e54d42",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/reading/Reading",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationBarBackgroundColor": "#e54d42"
+      }
+    },
+    {
+      "path": "pages/reading/SimpleRead",
+      "style": {
+        "navigationBarTitleText": "",
+        "navigationBarBackgroundColor": "#e54d42"
+      }
+    },
+    {
+      "path": "pages/reading/Directory",
+      "style": {
+        "navigationBarTitleText": "目录",
+        "navigationBarBackgroundColor": "#e54d42"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTitleText": "畅游看吧",
+    "navigationBarBackgroundColor": "#f7f6f2",
+    "backgroundColor": "#f7f6f2"
+  },
+  "tabBar": {
+    "color": "#aaaaaa",
+    "selectedColor": "#e54d42",
+    "borderStyle": "black",
+    "backgroundColor": "#f7f6f2",
+    "list": [
+      {
+        "pagePath": "pages/navigation/HomePage",
+        "iconPath": "static/icon/commonHomePage.png",
+        "selectedIconPath": "static/icon/selectedHomePage.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/navigation/Classify",
+        "iconPath": "static/icon/commonClassify.png",
+        "selectedIconPath": "static/icon/selectedClassify.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/navigation/Search",
+        "iconPath": "static/icon/commonSearch.png",
+        "selectedIconPath": "static/icon/selectedSearch.png",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/navigation/Bookcase",
+        "iconPath": "static/icon/commonBookcase.png",
+        "selectedIconPath": "static/icon/selectedBookcase.png",
+        "text": "书架"
+      },
+      {
+        "pagePath": "pages/navigation/My",
+        "iconPath": "static/icon/commonMy.png",
+        "selectedIconPath": "static/icon/selectedMy.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "condition": {
+    "current": 2,
+    "list": [{
+      "name": "test",
+      "path": "pages/navigation/Search"
+    }]
+  }
 }
