@@ -46,9 +46,27 @@
     {
       "path": "pages/navigation/Search",
       "style": {
-        "navigationBarTitleText": "搜索",
-        "navigationBarBackgroundColor": "#e54d42",
-        "disableScroll": true
+        "disableScroll": true,
+        "h5": {
+          "titleNView": {
+            "autoBackButton": "false",
+            "buttons": [
+              {
+                "type":"none",
+                "text":"取消",
+                "float":"right",
+                "fontSize": "15px"
+              }
+            ],
+            "backgroundColor": "#e54d42",
+            "searchInput": {
+              "backgroundColor": "#ffffff",
+              "borderRadius": "6px",
+              "placeholder": "搜索作者、小说",
+              "align": "left"
+            }
+          }
+        }
       }
     },
     {

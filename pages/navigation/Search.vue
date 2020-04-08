@@ -1,16 +1,5 @@
 <template>
     <view class="search">
-        <view class="cu-bar bg-white search">
-            <view class="search-form radius">
-                <text class="cuIcon-search"></text>
-                <input @input="inputBtn" @confirm="confirmBtn" v-model='searchText' :adjust-position="false" type="text"
-                       placeholder="搜索作者、小说" confirm-type="search"/>
-            </view>
-            <view class="action" v-if="searchText.length" @tap="clearBtn">
-                <text class="cuIcon-close"></text>
-                <text>取消</text>
-            </view>
-        </view>
         <view class="cu-card case no-card history-card" v-if="!fastResult.length">
             <view class="cu-bar solid-bottom">
                 <view class="action">
@@ -51,7 +40,6 @@
         name: 'Search',
         data() {
             return {
-                searchText: '',
                 searchHistory: [],
                 fastResult: [],
                 debounceTimeout: null
@@ -61,34 +49,37 @@
             this.searchHistory = uni.getStorageSync('searchHistory') || [];
         },
         onShow() {
-            this.clearBtn();
+            this.fastResult = [];
+        },
+        onNavigationBarButtonTap(e) {
+            uni.navigateBack({delta: 1});
+        },
+        onNavigationBarSearchInputChanged(e) {
+            if (this.debounceTimeout) {
+                clearTimeout(this.debounceTimeout);
+                this.debounceTimeout = null;
+            }
+            this.debounceTimeout = setTimeout(() => {
+                this.fastQueryBooks(e.text);
+            }, 1000);
+        },
+        onNavigationBarSearchInputConfirmed(e) {
+            if (e.text) {
+                let obj = {
+                    authorOrTitle: e.text
+                };
+                this.searchHistory = this.searchHistory.filter(item => item.authorOrTitle !== e.detail.value);
+                this.searchHistory.unshift(obj);
+                uni.setStorageSync('searchHistory', this.searchHistory);
+                uni.navigateTo({
+                    url: '/pages/result/SearchResult?params=' + JSON.stringify({
+                        type: 'searchResult',
+                        authorOrTitle: e.text
+                    })
+                });
+            }
         },
         methods: {
-            inputBtn(e) {
-                if (this.debounceTimeout) {
-                    clearTimeout(this.debounceTimeout);
-                    this.debounceTimeout = null;
-                }
-                this.debounceTimeout = setTimeout(() => {
-                    this.fastQueryBooks(e.detail.value);
-                }, 1000);
-            },
-            confirmBtn(e) {
-                if (e.detail.value) {
-                    let obj = {
-                        authorOrTitle: e.detail.value
-                    };
-                    this.searchHistory = this.searchHistory.filter(item => item.authorOrTitle !== e.detail.value);
-                    this.searchHistory.unshift(obj);
-                    uni.setStorageSync('searchHistory', this.searchHistory);
-                    uni.navigateTo({
-                        url: '/pages/result/SearchResult?params=' + JSON.stringify({
-                            type: 'searchResult',
-                            authorOrTitle: e.detail.value
-                        })
-                    });
-                }
-            },
             fastSearchBtn(novels) {
                 let obj = {
                     authorOrTitle: novels.title + '    ' + novels.author,
@@ -135,10 +126,6 @@
                         }
                     });
                 }
-            },
-            clearBtn() {
-                this.searchText = '';
-                this.fastResult = [];
             },
             deleteSearchHistoryBtn() {
                 this.searchHistory = [];

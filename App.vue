@@ -42,3 +42,11 @@
     @import "colorui/main.css";
     @import "colorui/icon.css";
 </style>
+
+<style lang="scss">
+    .pages-navigation-Search {
+        .uni-page-head-hd {
+            display: none;
+        }
+    }
+</style>
