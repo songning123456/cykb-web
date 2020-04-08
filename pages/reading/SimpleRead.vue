@@ -319,7 +319,7 @@
             padding: 0 16upx;
 
             .read-content {
-                min-height: 1100upx;
+                min-height: 1250upx;
             }
         }
 

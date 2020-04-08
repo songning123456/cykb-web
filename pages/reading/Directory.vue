@@ -41,7 +41,7 @@
             this.directoryList = JSON.parse(option.directory);
             this.currentChapterId = option.currentChapterId;
             if (this.directoryList && this.directoryList.length && this.currentChapterId) {
-                if (uni.getStorageSync('phoneInfo') && uni.getStorageSync('phoneInfo').windowHeight) {
+                if (uni.getStorageSync('systemInfo') && uni.getStorageSync('systemInfo').windowHeight) {
                     this.halfHeight = uni.getStorageSync('phoneInfo').windowHeight / 2;
                 } else {
                     this.halfHeight = 400;

@@ -28,7 +28,7 @@
                     <view class="content">
                         <text class="text-black">最新章节</text>
                     </view>
-                    <view class="action text-cut">
+                    <view class="action text-cut max-width">
                         {{novels.latestChapter}}
                     </view>
                 </view>
@@ -163,6 +163,12 @@
                             position: unset;
                         }
                     }
+                }
+            }
+
+            .cu-list {
+                .max-width {
+                    max-width: 481.5upx;
                 }
             }
 

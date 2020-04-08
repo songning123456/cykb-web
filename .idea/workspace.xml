@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45ed260a-6c42-4d72-99df-95dd60e36009" name="Default Changelist" comment="pages.json 优化">
+    <list default="true" id="45ed260a-6c42-4d72-99df-95dd60e36009" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/bookdetail/BookDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/bookdetail/BookDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/reading/Directory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reading/Directory.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/reading/SimpleRead.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reading/SimpleRead.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/request.js" afterDir="false" />
     </list>
@@ -70,7 +70,7 @@
       <updated>1586317172465</updated>
       <workItem from="1586317174302" duration="16465000" />
       <workItem from="1586349254390" duration="276000" />
-      <workItem from="1586349575583" duration="6428000" />
+      <workItem from="1586349575583" duration="8386000" />
     </task>
     <task id="LOCAL-00001" summary="迁移h5初步完成">
       <created>1586325899308</created>
@@ -107,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586341693110</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="优化">
+      <created>1586356026852</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1586356026852</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -132,6 +139,7 @@
     <MESSAGE value="导航栏search button按钮" />
     <MESSAGE value="search 页面优化" />
     <MESSAGE value="pages.json 优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="pages.json 优化" />
+    <MESSAGE value="优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化" />
   </component>
 </project>
