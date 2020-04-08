@@ -1,205 +1,196 @@
 {
-  "pages": [
-    {
-      "path": "pages/navigation/HomePage",
-      "style": {
-        "enablePullDownRefresh": true,
-        "h5": {
-          "titleNView": {
-            "titleText": "首页",
-            "backgroundColor": "#e54d42",
-            "buttons": [
-              {
-                "type":"none",
-                "text":"\ue603",
-                "fontSrc": "/static/iconfont/search.ttf",
-                "float":"right"
-              }
-            ]
-          },
-          "pullToRefresh": {
-            "color": "#2BD009"
-          }
-        }
-      }
-    },
-    {
-      "path": "pages/navigation/Classify",
-      "style": {
-        "disableScroll": true,
-        "h5": {
-          "titleNView": {
-            "titleText": "分类",
-            "backgroundColor": "#e54d42",
-            "buttons": [
-              {
-                "type":"none",
-                "text":"\ue603",
-                "fontSrc": "/static/iconfont/search.ttf",
-                "float":"right"
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "path": "pages/navigation/Search",
-      "style": {
-        "disableScroll": true,
-        "h5": {
-          "titleNView": {
-            "autoBackButton": "false",
-            "buttons": [
-              {
-                "type":"none",
-                "text":"取消",
-                "float":"right",
-                "fontSize": "15px"
-              }
-            ],
-            "backgroundColor": "#e54d42",
-            "searchInput": {
-              "backgroundColor": "#ffffff",
-              "borderRadius": "6px",
-              "placeholder": "搜索作者、小说",
-              "align": "left"
+    "pages": [
+        {
+            "path": "pages/navigation/HomePage",
+            "style": {
+                "enablePullDownRefresh": true,
+                "h5": {
+                    "titleNView": {
+                        "titleText": "首页",
+                        "backgroundColor": "#e54d42",
+                        "buttons": [
+                            {
+                                "type": "none",
+                                "text": "\ue603",
+                                "fontSrc": "/static/iconfont/search.ttf",
+                                "float": "right"
+                            }
+                        ]
+                    },
+                    "pullToRefresh": {
+                        "color": "#2BD009"
+                    }
+                }
             }
-          }
+        },
+        {
+            "path": "pages/navigation/Classify",
+            "style": {
+                "disableScroll": true,
+                "h5": {
+                    "titleNView": {
+                        "titleText": "分类",
+                        "backgroundColor": "#e54d42",
+                        "buttons": [
+                            {
+                                "type": "none",
+                                "text": "\ue603",
+                                "fontSrc": "/static/iconfont/search.ttf",
+                                "float": "right"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "path": "pages/navigation/Search",
+            "style": {
+                "disableScroll": true,
+                "h5": {
+                    "titleNView": {
+                        "autoBackButton": "false",
+                        "buttons": [
+                            {
+                                "type": "none",
+                                "text": "取消",
+                                "float": "right",
+                                "fontSize": "15px"
+                            }
+                        ],
+                        "backgroundColor": "#e54d42",
+                        "searchInput": {
+                            "backgroundColor": "#ffffff",
+                            "borderRadius": "6px",
+                            "placeholder": "搜索作者、小说",
+                            "align": "left"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "path": "pages/navigation/Bookcase",
+            "style": {
+                "enablePullDownRefresh": true,
+                "h5": {
+                    "titleNView": {
+                        "titleText": "书架",
+                        "backgroundColor": "#e54d42",
+                        "buttons": [
+                            {
+                                "type": "none",
+                                "text": "\ue603",
+                                "fontSrc": "/static/iconfont/search.ttf",
+                                "float": "right"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "path": "pages/navigation/My",
+            "style": {
+                "navigationBarTitleText": "我的",
+                "navigationBarBackgroundColor": "#e54d42",
+                "disableScroll": true
+            }
+        },
+        {
+            "path": "pages/comment/Comment",
+            "style": {
+                "navigationBarTitleText": "意见反馈",
+                "navigationBarBackgroundColor": "#e54d42",
+                "disableScroll": true
+            }
+        },
+        {
+            "path": "pages/login/Login",
+            "style": {
+                "navigationBarTitleText": "登录",
+                "navigationBarBackgroundColor": "#e54d42",
+                "disableScroll": true
+            }
+        },
+        {
+            "path": "pages/result/SearchResult",
+            "style": {
+                "navigationBarTitleText": "",
+                "navigationBarBackgroundColor": "#e54d42",
+                "enablePullDownRefresh": true
+            }
+        },
+        {
+            "path": "pages/settings/Settings",
+            "style": {
+                "navigationBarTitleText": "设置",
+                "navigationBarBackgroundColor": "#e54d42",
+                "disableScroll": true
+            }
+        },
+        {
+            "path": "pages/bookdetail/BookDetail",
+            "style": {
+                "navigationBarTitleText": "书籍详情",
+                "navigationBarBackgroundColor": "#e54d42",
+                "disableScroll": true
+            }
+        },
+        {
+            "path": "pages/reading/Reading",
+            "style": {
+                "navigationBarTitleText": "",
+                "navigationBarBackgroundColor": "#e54d42"
+            }
+        },
+        {
+            "path": "pages/reading/SimpleRead",
+            "style": {}
+        },
+        {
+            "path": "pages/reading/Directory",
+            "style": {
+                "navigationBarTitleText": "目录",
+                "navigationBarBackgroundColor": "#e54d42"
+            }
         }
-      }
+    ],
+    "globalStyle": {
+        "navigationBarTitleText": "畅游看吧",
+        "navigationBarBackgroundColor": "#f7f6f2",
+        "backgroundColor": "#f7f6f2"
     },
-    {
-      "path": "pages/navigation/Bookcase",
-      "style": {
-        "enablePullDownRefresh": true,
-        "h5": {
-          "titleNView": {
-            "titleText": "书架",
-            "backgroundColor": "#e54d42",
-            "buttons": [
-              {
-                "type":"none",
-                "text":"\ue603",
-                "fontSrc": "/static/iconfont/search.ttf",
-                "float":"right"
-              }
-            ]
-          }
-        }
-      }
-    },
-    {
-      "path": "pages/navigation/My",
-      "style": {
-        "navigationBarTitleText": "我的",
-        "navigationBarBackgroundColor": "#e54d42",
-        "disableScroll": true
-      }
-    },
-    {
-      "path": "pages/comment/Comment",
-      "style": {
-        "navigationBarTitleText": "意见反馈",
-        "navigationBarBackgroundColor": "#e54d42",
-        "disableScroll": true
-      }
-    },
-    {
-      "path": "pages/login/Login",
-      "style": {
-        "navigationBarTitleText": "登录",
-        "navigationBarBackgroundColor": "#e54d42",
-        "disableScroll": true
-      }
-    },
-    {
-      "path": "pages/result/SearchResult",
-      "style": {
-        "navigationBarTitleText": "",
-        "navigationBarBackgroundColor": "#e54d42",
-        "enablePullDownRefresh": true
-      }
-    },
-    {
-      "path": "pages/settings/Settings",
-      "style": {
-        "navigationBarTitleText": "设置",
-        "navigationBarBackgroundColor": "#e54d42",
-        "disableScroll": true
-      }
-    },
-    {
-      "path": "pages/bookdetail/BookDetail",
-      "style": {
-        "navigationBarTitleText": "书籍详情",
-        "navigationBarBackgroundColor": "#e54d42",
-        "disableScroll": true
-      }
-    },
-    {
-      "path": "pages/reading/Reading",
-      "style": {
-        "navigationBarTitleText": "",
-        "navigationBarBackgroundColor": "#e54d42"
-      }
-    },
-    {
-      "path": "pages/reading/SimpleRead",
-      "style": {}
-    },
-    {
-      "path": "pages/reading/Directory",
-      "style": {
-        "navigationBarTitleText": "目录",
-        "navigationBarBackgroundColor": "#e54d42"
-      }
+    "tabBar": {
+        "color": "#aaaaaa",
+        "selectedColor": "#e54d42",
+        "borderStyle": "black",
+        "backgroundColor": "#f7f6f2",
+        "list": [
+            {
+                "pagePath": "pages/navigation/HomePage",
+                "iconPath": "static/icon/commonHomePage.png",
+                "selectedIconPath": "static/icon/selectedHomePage.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/navigation/Classify",
+                "iconPath": "static/icon/commonClassify.png",
+                "selectedIconPath": "static/icon/selectedClassify.png",
+                "text": "分类"
+            },
+            {
+                "pagePath": "pages/navigation/Bookcase",
+                "iconPath": "static/icon/commonBookcase.png",
+                "selectedIconPath": "static/icon/selectedBookcase.png",
+                "text": "书架"
+            },
+            {
+                "pagePath": "pages/navigation/My",
+                "iconPath": "static/icon/commonMy.png",
+                "selectedIconPath": "static/icon/selectedMy.png",
+                "text": "我的"
+            }
+        ]
     }
-  ],
-  "globalStyle": {
-    "navigationBarTitleText": "畅游看吧",
-    "navigationBarBackgroundColor": "#f7f6f2",
-    "backgroundColor": "#f7f6f2"
-  },
-  "tabBar": {
-    "color": "#aaaaaa",
-    "selectedColor": "#e54d42",
-    "borderStyle": "black",
-    "backgroundColor": "#f7f6f2",
-    "list": [
-      {
-        "pagePath": "pages/navigation/HomePage",
-        "iconPath": "static/icon/commonHomePage.png",
-        "selectedIconPath": "static/icon/selectedHomePage.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/navigation/Classify",
-        "iconPath": "static/icon/commonClassify.png",
-        "selectedIconPath": "static/icon/selectedClassify.png",
-        "text": "分类"
-      },
-      {
-        "pagePath": "pages/navigation/Bookcase",
-        "iconPath": "static/icon/commonBookcase.png",
-        "selectedIconPath": "static/icon/selectedBookcase.png",
-        "text": "书架"
-      },
-      {
-        "pagePath": "pages/navigation/My",
-        "iconPath": "static/icon/commonMy.png",
-        "selectedIconPath": "static/icon/selectedMy.png",
-        "text": "我的"
-      }
-    ]
-  },
-  "condition": {
-    "current": 2,
-    "list": [
-      {
-        "name": "test",
-        "path": "pages/navigation/Search"
-      }
-    ]
-  }
 }
