@@ -146,7 +146,9 @@
         },
         {
             "path": "pages/reading/SimpleRead",
-            "style": {}
+            "style": {
+                "navigationStyle": "custom"
+            }
         },
         {
             "path": "pages/reading/Directory",

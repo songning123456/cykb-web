@@ -41,8 +41,12 @@
             </view>
         </view>
         <!-- 遮罩层上部分 -->
-        <view class="mask-top" :style="{top:isShowMask?0:-100+'rpx','background':skin.maskBgColor}">
-            <view class="mask-title" :style="'color:' + skin.fontColor">{{chapterInfo.chapter || '未知'}}
+        <view class="cu-bar mask-top" :style="{top:isShowMask? (0 + 'rpx') : (-100 +'rpx'),'background':skin.maskBgColor}">
+            <view class="action">
+                <text class="cuIcon-back text-gray" @tap="backBtn"></text>
+            </view>
+            <view class="content text-cut mask-title" :style="'color:' + skin.fontColor">
+                {{chapterInfo.chapter || '未知'}}
             </view>
         </view>
         <!-- 遮罩层下部分 -->
@@ -143,7 +147,6 @@
         },
         onLoad(options) {
             this.novels = JSON.parse(options.novels);
-            uni.setNavigationBarTitle({title: this.novels.title});
             if (uni.getStorageSync('skin')) {
                 this.skin = uni.getStorageSync('skin');
             }
@@ -177,6 +180,9 @@
                 }).finally(() => {
                     uni.hideLoading();
                 });
+            },
+            backBtn() {
+                uni.navigateBack({delta: 1});
             },
             topBtn() {
                 // 如果 已经登陆， 则在已经加入书架的前提下更新阅读时间
@@ -288,9 +294,6 @@
                     frontColor: titleFontColor,
                     backgroundColor: this.skin.pageBgColor
                 });
-                // uni.setBackgroundColor({
-                //     backgroundColor: this.skin.pageBgColor
-                // });
             },
             //修改背景颜色
             changeBackground(index) {
@@ -398,16 +401,16 @@
 
         .mask-top {
             position: fixed;
-            height: 40upx;
+            height: 81.5upx;
             transition: all 0.2s;
             width: 100%;
             z-index: 1000;
             margin: auto;
             border-radius: 0 0 4px 4px;
+            min-height: unset;
 
             .mask-title {
                 letter-spacing: 2px;
-                line-height: 20px;
                 text-align: center;
             }
         }
@@ -478,7 +481,6 @@
         }
 
         /deep/ .node-content {
-            margin-bottom: 100upx;
             margin-bottom: 100upx;
         }
 
