@@ -82,6 +82,7 @@
                 "enable" : true
             }
         },
-        "title" : "畅游看吧"
+        "title" : "畅游看吧",
+        "template" : "index.html"
     }
 }
