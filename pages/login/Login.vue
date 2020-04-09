@@ -1,9 +1,10 @@
 <template>
     <view class="login full-screen login-image">
-        <button class="cu-btn block bg-red margin-tb-sm lg" open-type="getUserInfo" @getuserinfo="loginWx"
-                withCredentials="true">
-            一键登录
-        </button>
+        <view class="login-position">
+            <input type="number" placeholder="请输入手机号" v-model='form.telephone' @confirm='loginBtn'
+                   confirm-type="go"/>
+            <button class="cu-btn block bg-red lg" @tap="loginBtn" :loading="loading">手机登录</button>
+        </view>
     </view>
 </template>
 
@@ -14,7 +15,11 @@
         name: 'Login',
         data () {
             return {
-                operateType: ''
+                operateType: '',
+                form: {
+                    telephone: ''
+                },
+                loading: false
             };
         },
         onLoad (option) {
@@ -25,69 +30,45 @@
         methods: {
             endOperation () {
                 if (this.operateType === 'back') {
-                    uni.navigateBack({  //uni.navigateTo跳转的返回，默认1为返回上一级
-                        delta: 1
-                    });
+                    uni.navigateBack({delta: 1});
                 }
             },
-            loginWx () {
-                uni.login({
-                    success: response2 => {
-                        // 获取用户信息
-                        uni.getUserInfo({
-                            provider: 'weixin',
-                            success: response3 => {
-                                uni.showLoading({
-                                    title: '登陆中',
-                                    mask: true
-                                });
-                                let params = {
-                                    condition: {
-                                        code: response2.code,
-                                        avatar: response3.userInfo.avatarUrl,
-                                        nickName: response3.userInfo.nickName,
-                                        gender: response3.userInfo.gender
-                                    }
-                                };
-                                request.post('/users/weixin/getUsersInfo', params).then(data => {
-                                    uni.hideLoading();
-                                    if (data.status === 200) {
-                                        uni.setStorage({
-                                            key: 'userInfo',
-                                            data: data.data[0]
-                                        });
-                                        this.$store.commit('SET_USERINFO', data.data[0]);
-                                        this.endOperation();
-                                    } else {
-                                        console.error('获取用户信息失败1');
-                                        uni.showToast({
-                                            title: '获取用户信息失败',
-                                            duration: 1000,
-                                            icon: 'none'
-                                        });
-                                    }
-                                }).catch(e => {
-                                    uni.hideLoading();
-                                    console.error('获取用户信息失败2');
-                                    uni.showToast({
-                                        title: '获取用户信息失败',
-                                        duration: 1000,
-                                        icon: 'none'
-                                    });
-                                });
-                            },
-                            fail: reject3 => {
-                                // doNothing...
-                            }
+            loginBtn() {
+                if (!regular.phone.test(this.form.telephone)) {
+                    uni.showToast({
+                        title: '请输入正确号牌号码',
+                        icon: 'none',
+                        duration: 2000
+                    });
+                    return;
+                }
+                let params = {
+                    condition: this.form
+                };
+                this.loading = true;
+                request.post('/users/web/getUsersInfo', params).then(data => {
+                    if (data.status === 200) {
+                        uni.setStorage({
+                            key: 'userInfo',
+                            data: data.data[0]
                         });
-                    },
-                    fail: response2 => {
+                        this.$store.commit('SET_USERINFO', data.data[0]);
+                        this.endOperation();
+                    } else {
                         uni.showToast({
-                            title: '登录失败',
+                            title: '获取用户信息失败',
                             duration: 1000,
                             icon: 'none'
                         });
                     }
+                }).catch(() => {
+                    uni.showToast({
+                        title: '获取用户信息失败',
+                        duration: 1000,
+                        icon: 'none'
+                    });
+                }).finally(() => {
+                    this.loading = false;
                 });
             }
         }
@@ -96,13 +77,28 @@
 
 <style lang="scss" scoped>
     .login {
-        .cu-btn {
-            width: 400upx;
+        .login-position {
             position: absolute;
-            top: 85%;
+            top: 50%;
             left: 50%;
             z-index: 10;
             transform: translate(-50%, -50%);
+
+            uni-input {
+                height: 2.2em;
+                margin-bottom: .8em;
+
+                .uni-input-wrapper {
+
+                    .uni-input-placeholder {
+                        padding-left: 6px;
+                    }
+                }
+            }
+
+            input {
+                background-color: #f7f6f2;
+            }
         }
     }
 
