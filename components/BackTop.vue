@@ -1,6 +1,6 @@
 <template>
     <view>
-        <view class="fixedView icon" @touchstart="touchIcon" @touchmove="moveIcon" @tap="tapIcon"
+        <view class="fixedView icon" @touchstart.stop="touchIcon" @touchmove.stop="moveIcon" @tap.stop="tapIcon"
               :style="{left:iconPosition.left+'px',top:iconPosition.top+'px',width:iconSize.width+'upx',height:iconSize.height+'upx'}">
             <image :src="icon_path" :style="{width:iconSize.width+'upx',height:iconSize.height+'upx'}"
                    mode="aspectFill"></image>
@@ -31,7 +31,7 @@
                 iconPosition: {
                     left: 0,
                     top: 0,
-                    touchPostion: {
+                    touchPosition: {
                         x: 0,
                         y: 0
                     }
@@ -114,7 +114,7 @@
                         that.$set(that, 'icon_path', that.iconPath);
                     },
                     fail(err) {
-                        that.$set(that, 'icon_path', '../../static/logo.png');
+                        that.$set(that, 'icon_path', '');
                         uni.showModal({
                             title: '错误',
                             content: '未知图片：' + that.iconPath,
@@ -126,9 +126,8 @@
         },
         methods: {
             touchIcon(e) {
-                //console.log(e);
-                this.$set(this.iconPosition.touchPostion, 'x', e.touches[0].clientX);
-                this.$set(this.iconPosition.touchPostion, 'y', e.touches[0].clientY);
+                this.$set(this.iconPosition.touchPosition, 'x', e.touches[0].clientX);
+                this.$set(this.iconPosition.touchPosition, 'y', e.touches[0].clientY);
             },
             moveIcon(e) {
                 this.$set(this.iconPosition, 'left', e.touches[0].clientX - uni.upx2px(this.iconSize.width / 2));
