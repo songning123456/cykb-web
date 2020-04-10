@@ -10,6 +10,7 @@
 
 <script>
     import request from '../../util/request';
+    import regular from '../../util/regular';
 
     export default {
         name: 'Login',
@@ -36,8 +37,8 @@
             loginBtn() {
                 if (!regular.phone.test(this.form.telephone)) {
                     uni.showToast({
-                        title: '请输入正确号牌号码',
-                        icon: 'none',
+                        title: '手机号码错误',
+                        image: '/static/image/error.png',
                         duration: 2000
                     });
                     return;
@@ -56,16 +57,16 @@
                         this.endOperation();
                     } else {
                         uni.showToast({
-                            title: '获取用户信息失败',
+                            title: '获取信息失败',
                             duration: 1000,
-                            icon: 'none'
+                            image: '/static/image/error.png',
                         });
                     }
                 }).catch(() => {
                     uni.showToast({
-                        title: '获取用户信息失败',
+                        title: '获取信息失败',
                         duration: 1000,
-                        icon: 'none'
+                        image: '/static/image/error.png',
                     });
                 }).finally(() => {
                     this.loading = false;

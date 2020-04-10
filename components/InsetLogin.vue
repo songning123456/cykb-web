@@ -27,8 +27,8 @@
             loginBtn() {
                 if (!regular.phone.test(this.form.telephone)) {
                     uni.showToast({
-                        title: '请输入正确号牌号码',
-                        icon: 'none',
+                        title: '手机号码错误',
+                        image: '/static/image/error.png',
                         duration: 2000
                     });
                     return;
@@ -46,16 +46,16 @@
                         this.$store.commit('SET_USERINFO', data.data[0]);
                     } else {
                         uni.showToast({
-                            title: '获取用户信息失败',
+                            title: '获取信息失败',
                             duration: 1000,
-                            icon: 'none'
+                            image: '/static/image/error.png'
                         });
                     }
                 }).catch(() => {
                     uni.showToast({
-                        title: '获取用户信息失败',
+                        title: '获取信息失败',
                         duration: 1000,
-                        icon: 'none'
+                        image: '/static/image/error.png'
                     });
                 }).finally(() => {
                     this.loading = false;
