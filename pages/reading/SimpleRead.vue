@@ -279,10 +279,7 @@
                 } else {
                     this.skin.lineHeight = e.detail.value;
                 }
-                uni.setStorage({
-                    key: 'skin',
-                    data: this.skin
-                });
+                uni.setStorageSync('skin', this.skin);
             },
             setSkin() {
                 let titleFontColor = '#000000';
@@ -302,10 +299,7 @@
                 this.skin.fontColor = this.colorArr[index].fontColor;//字体颜色
                 this.skin.maskBgColor = this.colorArr[index].maskBgColor;//遮罩背景色
                 this.setSkin();
-                uni.setStorage({
-                    key: 'skin',
-                    data: this.skin
-                });
+                uni.setStorageSync('skin', this.skin);
             }
         }
     };

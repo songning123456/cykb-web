@@ -38,7 +38,7 @@
 
     export default {
         name: 'Settings',
-        data() {
+        data () {
             return {
                 sortModal: false,
                 sorts: [
@@ -54,19 +54,24 @@
             };
         },
         computed: {
-            sortType() {
+            sortType () {
                 return this.$store.state.sortType;
             },
-            isDark() {
+            isDark () {
                 return this.$store.state.isDark;
             },
-            settings() {
+            settings () {
+                let icons = [{
+                    icon: 'arrow',
+                    title: '退出登录',
+                    type: 'exit'
+                }, {
+                    icon: 'text',
+                    title: '书架排序',
+                    type: 'sort'
+                }];
                 let result = [
                     {
-                        icon: 'arrow',
-                        title: '退出登录',
-                        type: 'exit'
-                    }, {
                         icon: 'switch',
                         title: '夜间模式',
                         type: 'nightMode'
@@ -77,27 +82,23 @@
                     }
                 ];
                 if (this.$store.state.userInfo) {
-                    let obj = {
-                        icon: 'text',
-                        title: '书架排序',
-                        type: 'sort'
-                    };
-                    this.result.splice(1, 0, obj);
+                    result.unshift(icons);
                 }
                 return result;
             }
         },
         methods: {
-            settingBtn(type) {
+            settingBtn (type) {
                 switch (type) {
                     case 'exit':
                         try {
                             uni.removeStorageSync('userInfo');
+                            uni.removeStorageSync('sortType');
                             this.$store.commit('SET_USERINFO', null);
-                            uni.showToast({title: '注销成功', duration: 1000});
+                            this.$store.commit('SET_SORTTYPE', '最近阅读');
+                            uni.showToast({ title: '注销成功', duration: 1000 });
                         } catch (e) {
-                            console.error(e);
-                            uni.showToast({icon: 'none', title: '注销失败', duration: 1000});
+                            uni.showToast({ image: '/static/image/error.png', title: '注销失败', duration: 1000 });
                         }
                         break;
                     case 'sort':
@@ -108,7 +109,7 @@
                     case 'storage':
                         uni.showModal({
                             title: '提示',
-                            content: '确定清空 阅读记录,登录信息?',
+                            content: '确定清空信息?',
                             success: res => {
                                 if (res.confirm) {
                                     try {
@@ -116,10 +117,10 @@
                                         this.$store.commit('SET_USERINFO', null);
                                         this.$store.commit('SET_SORTTYPE', '最近阅读');
                                         this.$store.commit('SET_ISDARK', false);
-                                        uni.showToast({title: '清理完成', duration: 1000});
+                                        uni.showToast({ title: '清理完成', duration: 1000 });
                                         // 系统信息
                                         uni.getSystemInfo({
-                                            success: function (e) {
+                                            success: e => {
                                                 uni.setStorageSync('systemInfo', e);
                                             }
                                         });
@@ -132,22 +133,14 @@
                         break;
                 }
             },
-            sortBtn(e) {
+            sortBtn (e) {
                 this.$store.commit('SET_SORTTYPE', e.currentTarget.dataset.sort);
-                uni.setStorage({
-                    key: 'sortType',
-                    data: e.currentTarget.dataset.sort
-                });
                 this.sortModal = false;
             },
-            nightModeBtn(e) {
+            nightModeBtn (e) {
                 this.$store.commit('SET_ISDARK', e.detail.value);
-                uni.setStorage({
-                    key: 'isDark',
-                    data: e.detail.value
-                });
             },
-            hideSortModal() {
+            hideSortModal () {
                 this.sortModal = false;
             }
         }

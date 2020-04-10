@@ -1,7 +1,7 @@
 <template>
     <view class="login full-screen login-image">
         <view class="login-position">
-            <input type="number" placeholder="请输入手机号" v-model='form.telephone' @confirm='loginBtn'
+            <input type="number" placeholder="请输入手机号" v-model='form.code' @confirm='loginBtn'
                    confirm-type="go"/>
             <button class="cu-btn block bg-red lg" @tap="loginBtn" :loading="loading">手机登录</button>
         </view>
@@ -18,7 +18,7 @@
             return {
                 operateType: '',
                 form: {
-                    telephone: ''
+                    code: ''
                 },
                 loading: false
             };
@@ -35,7 +35,7 @@
                 }
             },
             loginBtn() {
-                if (!regular.phone.test(this.form.telephone)) {
+                if (!regular.phone.test(this.form.code)) {
                     uni.showToast({
                         title: '手机号码错误',
                         image: '/static/image/error.png',
@@ -49,10 +49,6 @@
                 this.loading = true;
                 request.post('/users/web/getUsersInfo', params).then(data => {
                     if (data.status === 200) {
-                        uni.setStorage({
-                            key: 'userInfo',
-                            data: data.data[0]
-                        });
                         this.$store.commit('SET_USERINFO', data.data[0]);
                         this.endOperation();
                     } else {

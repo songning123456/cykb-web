@@ -29,7 +29,9 @@
         },
         destroyed() {
             let doc = document.getElementsByClassName('uni-page-head-ft')[0];
-            doc.removeEventListener('click', this.topBottomBtn);
+            if (doc) {
+                doc.removeEventListener('click', this.topBottomBtn);
+            }
         },
         onLoad(option) {
             this.directoryList = JSON.parse(option.directory);

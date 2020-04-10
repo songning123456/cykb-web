@@ -11,12 +11,15 @@ const store = new Vuex.Store({
     mutations: {
         SET_USERINFO: (state, userInfo) => {
             state.userInfo = userInfo;
+            uni.setStorageSync('userInfo', userInfo);
         },
         SET_SORTTYPE: (state, sortType) => {
             state.sortType = sortType;
+            uni.setStorageSync('sortType', sortType);
         },
         SET_ISDARK: (state, isDark) => {
             state.isDark = isDark;
+            uni.setStorageSync('isDark', isDark);
         }
     },
     actions: {}

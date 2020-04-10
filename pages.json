@@ -61,7 +61,7 @@
                         "backgroundColor": "#e54d42",
                         "searchInput": {
                             "backgroundColor": "#ffffff",
-                            "borderRadius": "6px",
+                            "borderRadius": "10px",
                             "placeholder": "搜索作者、小说",
                             "align": "left"
                         }

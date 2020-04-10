@@ -6,6 +6,9 @@
                 key: 'userInfo',
                 success: data => {
                     this.$store.commit('SET_USERINFO', data.data);
+                },
+                fail: e => {
+                    this.$store.commit('SET_USERINFO', null);
                 }
             });
             // 排序方式
@@ -13,6 +16,9 @@
                 key: 'sortType',
                 success: data => {
                     this.$store.commit('SET_SORTTYPE', data.data);
+                },
+                fail: e => {
+                    this.$store.commit('SET_SORTTYPE', '最近阅读');
                 }
             });
             // 暗黑模式
@@ -20,6 +26,9 @@
                 key: 'isDark',
                 success: data => {
                     this.$store.commit('SET_ISDARK', data.data);
+                },
+                fail: e => {
+                    this.$store.commit('SET_ISDARK', false);
                 }
             });
             // 缓存系统信息

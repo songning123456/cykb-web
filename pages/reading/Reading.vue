@@ -158,10 +158,10 @@
             },
             topBtn() {
                 // 如果 已经登陆， 则在已经加入书架的前提下更新阅读时间
-                if (this.$store.state.userInfo) {
+                if (uni.getStorageSync('userInfo')) {
                     let params = {
                         condition: {
-                            uniqueId: this.$store.state.userInfo.uniqueId,
+                            uniqueId: uni.getStorageSync('userInfo').uniqueId,
                             novelsId: this.novels.novelsId
                         }
                     };
@@ -337,7 +337,6 @@
                         // error
                     }
                 }
-                console.error(uni.getStorageSync(this.novels.novelsId + ':scrollInfo'));
             },
             directoryBtn() {
                 uni.navigateTo({
@@ -351,10 +350,7 @@
                 } else {
                     this.skin.lineHeight = e.detail.value;
                 }
-                uni.setStorage({
-                    key: 'skin',
-                    data: this.skin
-                });
+                uni.setStorageSync('skin', this.skin);
             },
             setSkin() {
                 let titleFontColor = '#000000';
@@ -377,10 +373,7 @@
                 this.skin.fontColor = this.colorArr[index].fontColor;//字体颜色
                 this.skin.maskBgColor = this.colorArr[index].maskBgColor;//遮罩背景色
                 this.setSkin();
-                uni.setStorage({
-                    key: 'skin',
-                    data: this.skin
-                });
+                uni.setStorageSync('skin', this.skin);
             }
         }
     };
