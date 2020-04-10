@@ -85,13 +85,15 @@
                 .uni-input-wrapper {
 
                     .uni-input-placeholder {
-                        padding-left: 6px;
+                        box-sizing: border-box;
                     }
                 }
             }
 
 
             input {
+                padding-left: 6px;
+                box-sizing: border-box;
                 background-color: #f7f6f2;
             }
         }
