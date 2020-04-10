@@ -4,10 +4,9 @@
                      :scroll-left="scrollLeft">
             <view class="cu-item" :class="{'text-red cur': item.category === tabCur}" v-for="(item,index) in categoryInfo"
                   :key="index" @tap="tabSelect" :data-id="item.category">
-                {{item.category + ' (共' + item.categoryTotal + '本)'}}
+                {{item.category + ' (共' + item.categoryTotal || 0 + '本)'}}
             </view>
         </scroll-view>
-        <view v-if="loadType === 'classify'" class="search-fill"></view>
         <view class="cu-list full-size">
             <view class="cu-card article no-card" v-for="(item, index) in result" :key="index"
                   @tap="bookDetailBtn(item)">
@@ -27,6 +26,7 @@
                 </view>
             </view>
         </view>
+        <back-top></back-top>
     </view>
 </template>
 
@@ -89,8 +89,9 @@
                 this.tabCur = e.currentTarget.dataset.id;
                 this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60;
                 this.loadParams.category = e.currentTarget.dataset.id;
-                uni.showLoading({ title: 'loading...', mask: true });
-                this.queryConstantResult('first', '/novels/classifyResult');
+                setTimeout(() => {
+                    uni.startPullDownRefresh();
+                }, 100)
             },
             queryConstantResult (firstOrMore, url) {
                 let params = {
@@ -118,7 +119,6 @@
                 }).finally(() => {
                     if (firstOrMore === 'first') {
                         uni.stopPullDownRefresh();//得到数据后停止下拉刷新
-                        uni.hideLoading();
                     }
                 });
             },
@@ -136,15 +136,7 @@
     .search-result {
 
         .search-classify {
-            position: absolute;
-            z-index: 1;
-            top: 0;
             background-color: white;
-        }
-
-        .search-fill {
-            width: 100%;
-            height: 90rpx;
         }
 
         .cu-list {

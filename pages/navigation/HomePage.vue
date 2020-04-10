@@ -20,6 +20,7 @@
                 </view>
             </view>
         </view>
+        <back-top></back-top>
     </view>
 </template>
 
