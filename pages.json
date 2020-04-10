@@ -153,8 +153,19 @@
         {
             "path": "pages/reading/Directory",
             "style": {
-                "navigationBarTitleText": "目录",
-                "navigationBarBackgroundColor": "#e54d42"
+                "h5": {
+                    "titleNView": {
+                        "titleText": "目录",
+                        "backgroundColor": "#e54d42",
+                        "buttons": [
+                            {
+                                "type": "none",
+                                "text": "到底部",
+                                "fontSize": "6px"
+                            }
+                        ]
+                    }
+                }
             }
         }
     ],
