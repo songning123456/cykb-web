@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45ed260a-6c42-4d72-99df-95dd60e36009" name="Default Changelist" comment="">
+    <list default="true" id="45ed260a-6c42-4d72-99df-95dd60e36009" name="Default Changelist" comment="IOS 启动图标优化">
+      <change afterPath="$PROJECT_DIR$/static/logo/icon114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/logo/icon144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/logo/icon57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/logo/icon72.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/logo/icon120.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/logo/icon152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/logo/icon167.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/logo/icon180.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +24,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/App.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
+            <state relative-caret-position="22">
               <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
             </state>
           </provider>
@@ -24,15 +33,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="24" column="106" lean-forward="true" selection-start-line="24" selection-start-column="88" selection-end-line="24" selection-end-column="106" />
+            <state relative-caret-position="352">
+              <caret line="28" column="42" lean-forward="true" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/logo/test.jpg">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -117,15 +121,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JSON" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\WebStormProject\cykb-web\static\logo" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\WebStormProject\cykb-web\static\logo" />
       <recent name="D:\WebStormProject\cykb-web\static\iconfont" />
       <recent name="D:\WebStormProject\cykb-web\components" />
       <recent name="D:\WebStormProject\cykb-web\pages" />
       <recent name="D:\WebStormProject\cykb-web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WebStormProject\cykb-web\static\logo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -153,6 +157,7 @@
       <workItem from="1586317174302" duration="16465000" />
       <workItem from="1586349254390" duration="276000" />
       <workItem from="1586349575583" duration="8386000" />
+      <workItem from="1586483475014" duration="1549000" />
     </task>
     <task id="LOCAL-00001" summary="迁移h5初步完成">
       <created>1586325899308</created>
@@ -210,11 +215,18 @@
       <option name="project" value="LOCAL" />
       <updated>1586426746792</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="IOS 启动图标优化">
+      <created>1586427183412</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1586427183412</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12677000" />
+    <option name="totallyTimeSpent" value="15617000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -229,18 +241,18 @@
     <frame x="1912" y="392" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13277134" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13277134" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.24186552" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.33188722" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.21800433" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.21800433" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.28416485" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -303,7 +315,8 @@
     <MESSAGE value="优化" />
     <MESSAGE value="Login 优化" />
     <MESSAGE value="IOS 启动图标完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="IOS 启动图标完成" />
+    <MESSAGE value="IOS 启动图标优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="IOS 启动图标优化" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/colorui/main.css">
@@ -379,23 +392,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/logo/fire.svg" />
+    <entry file="file://$PROJECT_DIR$/static/logo/test.jpg" />
     <entry file="file://$PROJECT_DIR$/App.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
+        <state relative-caret-position="22">
           <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/logo/fire.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/logo/test.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="24" column="106" lean-forward="true" selection-start-line="24" selection-start-column="88" selection-end-line="24" selection-end-column="106" />
+        <state relative-caret-position="352">
+          <caret line="28" column="42" lean-forward="true" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
         </state>
       </provider>
     </entry>
