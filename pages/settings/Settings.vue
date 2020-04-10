@@ -82,7 +82,7 @@
                     }
                 ];
                 if (this.$store.state.userInfo) {
-                    result.unshift(icons);
+                    result.unshift(...icons);
                 }
                 return result;
             }

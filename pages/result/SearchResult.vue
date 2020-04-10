@@ -4,7 +4,7 @@
                      :scroll-left="scrollLeft">
             <view class="cu-item" :class="{'text-red cur': item.category === tabCur}" v-for="(item,index) in categoryInfo"
                   :key="index" @tap="tabSelect" :data-id="item.category">
-                {{item.category + ' (共' + item.categoryTotal || 0 + '本)'}}
+                {{item.category + ' (共' + item.categoryTotal + '本)'}}
             </view>
         </scroll-view>
         <view class="cu-list full-size">

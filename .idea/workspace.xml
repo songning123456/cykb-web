@@ -1,17 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45ed260a-6c42-4d72-99df-95dd60e36009" name="Default Changelist" comment="login 优化">
+    <list default="true" id="45ed260a-6c42-4d72-99df-95dd60e36009" name="Default Changelist" comment="优化">
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5.tar.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/commonBookcase.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/commonClassify.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/commonHomePage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/commonMy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/selectedBookcase.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/selectedClassify.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/selectedHomePage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/selectedMy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/iconfont/search.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/image/avatar.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/image/error.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/index.8e661774.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/chunk-vendors.0ad5c89c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/index.f447183e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-bookdetail-BookDetail.5ad935fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-comment-Comment.d5dd4ca7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-login-Login.aba71df3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-navigation-Bookcase.fedcabfd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-navigation-Classify.255eb388.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-navigation-HomePage.c34b1f79.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-navigation-My.619ec0e9.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-navigation-Search.46fb4cb1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-reading-Directory.b865a5c9.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-reading-Reading.04de1ca3.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-reading-Reading~pages-reading-SimpleRead.e9940b7c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-reading-SimpleRead.552647eb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-result-SearchResult.a5c7e1df.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-settings-Settings.f70c2d2e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon114.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon144.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon72.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/InsetLogin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/InsetLogin.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/reading/Directory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reading/Directory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/reading/Reading.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reading/Reading.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/reading/SimpleRead.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reading/SimpleRead.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/result/SearchResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/result/SearchResult.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/settings/Settings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/settings/Settings.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/store.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +70,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -209,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586508537868</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="优化">
+      <created>1586530476703</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1586530476703</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -262,12 +298,12 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="迁移h5初步完成" />
     <MESSAGE value="优化homepage" />
     <MESSAGE value="导航栏search button按钮" />
     <MESSAGE value="search 页面优化" />
     <MESSAGE value="pages.json 优化" />
-    <MESSAGE value="优化" />
     <MESSAGE value="Login 优化" />
     <MESSAGE value="IOS 启动图标完成" />
     <MESSAGE value="IOS 启动图标优化" />
@@ -278,6 +314,7 @@
     <MESSAGE value="目录 优化" />
     <MESSAGE value="back-top 优化" />
     <MESSAGE value="login 优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="login 优化" />
+    <MESSAGE value="优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化" />
   </component>
 </project>
