@@ -36,7 +36,9 @@
             };
         },
         onLoad() {
-            uni.startPullDownRefresh();
+            setTimeout(() => {
+                uni.startPullDownRefresh();
+            }, 100)
         },
         onReachBottom() {
             this.queryHomePage('more');

@@ -61,14 +61,18 @@
         },
         onShow() {
             if (this.userInfo) {
-                uni.startPullDownRefresh();
+                setTimeout(() => {
+                    uni.startPullDownRefresh();
+                }, 100)
             }
         },
         watch: {
             // 主要用于 一开始未登录，后来登录；重新加载数据
             userInfo (newVal, oldVal) {
                 if (newVal && !oldVal) {
-                    uni.startPullDownRefresh();
+                    setTimeout(() => {
+                        uni.startPullDownRefresh();
+                    }, 100)
                 }
             },
             sortType (newVal, oldVal) {

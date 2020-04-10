@@ -65,7 +65,10 @@
                 };
                 uni.setNavigationBarTitle({ title: '搜索结果' });
             }
-            uni.startPullDownRefresh();
+            // 解决h5端,uni.startPullDownRefresh()只能执行一次问题
+            setTimeout(() => {
+                uni.startPullDownRefresh();
+            }, 100)
         },
         onReachBottom () {
             if (this.loadType === 'classify') {
@@ -133,7 +136,7 @@
     .search-result {
 
         .search-classify {
-            position: fixed;
+            position: absolute;
             z-index: 1;
             top: 0;
             background-color: white;
