@@ -72,6 +72,7 @@
 
         .login-position {
             position: absolute;
+            width: 65%;
             top: 50%;
             left: 50%;
             z-index: 10;

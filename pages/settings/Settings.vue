@@ -35,31 +35,11 @@
 </template>
 
 <script>
-    import common from '../../util/common';
 
     export default {
         name: 'Settings',
-        data () {
+        data() {
             return {
-                settings: [
-                    {
-                        icon: 'arrow',
-                        title: '退出登录',
-                        type: 'exit'
-                    }, {
-                        icon: 'text',
-                        title: '书架排序',
-                        type: 'sort'
-                    }, {
-                        icon: 'switch',
-                        title: '夜间模式',
-                        type: 'nightMode'
-                    }, {
-                        icon: 'arrow',
-                        title: '清理缓存',
-                        type: 'storage'
-                    }
-                ],
                 sortModal: false,
                 sorts: [
                     {
@@ -69,34 +49,55 @@
                     {
                         icon: 'cuIcon-time',
                         title: '更新时间'
-                    },
+                    }
                 ]
             };
         },
         computed: {
-            sortType () {
+            sortType() {
                 return this.$store.state.sortType;
             },
-            isDark () {
+            isDark() {
                 return this.$store.state.isDark;
             },
+            settings() {
+                let result = [
+                    {
+                        icon: 'arrow',
+                        title: '退出登录',
+                        type: 'exit'
+                    }, {
+                        icon: 'switch',
+                        title: '夜间模式',
+                        type: 'nightMode'
+                    }, {
+                        icon: 'arrow',
+                        title: '清理缓存',
+                        type: 'storage'
+                    }
+                ];
+                if (this.$store.state.userInfo) {
+                    let obj = {
+                        icon: 'text',
+                        title: '书架排序',
+                        type: 'sort'
+                    };
+                    this.result.splice(1, 0, obj);
+                }
+                return result;
+            }
         },
         methods: {
-            settingBtn (type) {
+            settingBtn(type) {
                 switch (type) {
                     case 'exit':
-                        uni.showLoading({
-                            title: '注销中',
-                            mask: true
-                        });
                         try {
                             uni.removeStorageSync('userInfo');
                             this.$store.commit('SET_USERINFO', null);
+                            uni.showToast({title: '注销成功', duration: 1000});
                         } catch (e) {
                             console.error(e);
-                        } finally {
-                            common.sleep(500);
-                            uni.hideLoading();
+                            uni.showToast({icon: 'none', title: '注销失败', duration: 1000});
                         }
                         break;
                     case 'sort':
@@ -115,16 +116,11 @@
                                         this.$store.commit('SET_USERINFO', null);
                                         this.$store.commit('SET_SORTTYPE', '最近阅读');
                                         this.$store.commit('SET_ISDARK', false);
-                                        uni.showToast({ title: '清理完成', duration: 1000 });
+                                        uni.showToast({title: '清理完成', duration: 1000});
                                         // 系统信息
                                         uni.getSystemInfo({
                                             success: function (e) {
-                                                uni.setStorageSync('phoneInfo', e);
-                                            }
-                                        });
-                                        uni.getScreenBrightness({
-                                            success: function (res) {
-                                                uni.setStorageSync('screenBrightness', res.value);
+                                                uni.setStorageSync('systemInfo', e);
                                             }
                                         });
                                     } catch (e) {
@@ -136,7 +132,7 @@
                         break;
                 }
             },
-            sortBtn (e) {
+            sortBtn(e) {
                 this.$store.commit('SET_SORTTYPE', e.currentTarget.dataset.sort);
                 uni.setStorage({
                     key: 'sortType',
@@ -144,24 +140,16 @@
                 });
                 this.sortModal = false;
             },
-            nightModeBtn (e) {
+            nightModeBtn(e) {
                 this.$store.commit('SET_ISDARK', e.detail.value);
                 uni.setStorage({
                     key: 'isDark',
                     data: e.detail.value
                 });
-                let value = uni.getStorageSync('screenBrightness') || 0.5;
-                if (this.isDark) {
-                    value = value - 0.3;
-                    if (value < 0) {
-                        value = 0;
-                    }
-                }
-                uni.setScreenBrightness({ value: value });
             },
-            hideSortModal () {
+            hideSortModal() {
                 this.sortModal = false;
-            },
+            }
         }
     };
 </script>
