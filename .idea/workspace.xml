@@ -16,8 +16,8 @@
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/image/avatar.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/image/error.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/index.8e661774.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/chunk-vendors.0ad5c89c.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/index.f447183e.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/chunk-vendors.16fe1a27.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/index.5b6816f5.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-bookdetail-BookDetail.5ad935fa.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-comment-Comment.d5dd4ca7.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-login-Login.aba71df3.js" afterDir="false" />
@@ -36,10 +36,9 @@
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon144.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon57.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon72.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/CustomCopy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/result/SearchResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/result/SearchResult.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/settings/Settings.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/settings/Settings.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/navigation/My.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/navigation/My.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,21 +74,21 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/util" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JSON" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WebStormProject\cykb-web\static\logo" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\project\cykb-web\util" />
       <recent name="D:\WebStormProject\cykb-web\static\image" />
       <recent name="D:\WebStormProject\cykb-web\static\logo" />
       <recent name="D:\WebStormProject\cykb-web\static\iconfont" />
       <recent name="D:\WebStormProject\cykb-web\components" />
-      <recent name="D:\WebStormProject\cykb-web\pages" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\WebStormProject\cykb-web\static\logo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -245,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586530476703</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="优化">
+      <created>1586533053701</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1586533053701</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">

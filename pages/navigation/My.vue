@@ -14,7 +14,7 @@
                     <view class="content">提示</view>
                 </view>
                 <view class="padding-xl">
-                    (温馨提示：链接复制成功，请分享给您的好友)发送给好友的复制内容是: {{clipboard}}
+                    (温馨提示：链接复制成功，请分享给您的好友)发送给好友的复制内容是:<br> {{clipboard}}
                 </view>
                 <view class="cu-bar bg-white">
                     <view class="action margin-0 flex-sub text-blue solid-left" @tap="hideShareModal">取消</view>
@@ -26,9 +26,11 @@
 </template>
 
 <script>
+    import h5Copy from '.././../util/CustomCopy';
+
     export default {
         name: 'My',
-        data() {
+        data () {
             return {
                 displayInfo: [
                     {
@@ -49,7 +51,7 @@
             };
         },
         methods: {
-            tapBtn(type) {
+            tapBtn (type) {
                 switch (type) {
                     case 'share':
                         this.shareModal = true;
@@ -66,10 +68,10 @@
                         break;
                 }
             },
-            hideShareModal(type) {
+            hideShareModal (type) {
                 this.shareModal = false;
                 if (!type) {
-                    uni.setClipboardData({data: this.clipboard});
+                    h5Copy(this.clipboard);
                 }
             }
         }
