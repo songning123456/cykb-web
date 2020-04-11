@@ -36,9 +36,10 @@
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon144.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon57.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon72.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/util/CustomCopy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/navigation/My.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/navigation/My.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/InsetLogin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/InsetLogin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/login/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util/regular.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/regular.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -251,7 +252,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586533053701</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="重写复制">
+      <created>1586570406897</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1586570406897</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -321,6 +329,7 @@
     <MESSAGE value="back-top 优化" />
     <MESSAGE value="login 优化" />
     <MESSAGE value="优化" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化" />
+    <MESSAGE value="重写复制" />
+    <option name="LAST_COMMIT_MESSAGE" value="重写复制" />
   </component>
 </project>

@@ -1,9 +1,9 @@
 <template>
     <view class="login full-screen login-image">
         <view class="login-position">
-            <input type="number" placeholder="请输入手机号" v-model='form.code' @confirm='loginBtn'
+            <input placeholder="请输入邮箱" v-model='form.code' @confirm='loginBtn'
                    confirm-type="go"/>
-            <button class="cu-btn block bg-red lg" @tap="loginBtn" :loading="loading">手机登录</button>
+            <button class="cu-btn block bg-red lg" @tap="loginBtn" :loading="loading">一键登录</button>
         </view>
     </view>
 </template>
@@ -37,7 +37,7 @@
             loginBtn() {
                 if (!regular.phone.test(this.form.code)) {
                     uni.showToast({
-                        title: '手机号码错误',
+                        title: '邮箱格式错误',
                         image: '/static/image/error.png',
                         duration: 2000
                     });
