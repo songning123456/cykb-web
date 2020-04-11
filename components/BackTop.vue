@@ -138,10 +138,7 @@
                 this.$set(this.iconPosition, 'top', Math.max(this.windowSize.margin.top, this.iconPosition.top));
             },
             tapIcon(e) {
-                uni.pageScrollTo({
-                    scrollTop: 0,
-                    duration: 300
-                });
+                this.$emit('backTop');
             }
         }
     };

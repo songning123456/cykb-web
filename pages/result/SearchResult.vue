@@ -2,31 +2,34 @@
     <view class="search-result">
         <scroll-view v-if="loadType === 'classify'" scroll-x class="nav search-classify" scroll-with-animation
                      :scroll-left="scrollLeft">
-            <view class="cu-item" :class="{'text-red cur': item.category === tabCur}" v-for="(item,index) in categoryInfo"
+            <view class="cu-item" :class="{'text-red cur': item.category === tabCur}"
+                  v-for="(item,index) in categoryInfo"
                   :key="index" @tap="tabSelect" :data-id="item.category">
                 {{item.category + ' (共' + item.categoryTotal + '本)'}}
             </view>
         </scroll-view>
-        <view class="cu-list full-size">
-            <view class="cu-card article no-card" v-for="(item, index) in result" :key="index"
-                  @tap="bookDetailBtn(item)">
-                <view class="cu-item shadow">
-                    <view class="content">
-                        <custom-image class="image-size" :url="item.coverUrl"></custom-image>
-                        <view class="desc">
-                            <view class="title text-cut text-shadow">{{item.title}}</view>
-                            <view class="text-content">{{convertIntroduction(item.introduction)}}</view>
-                            <view>
-                                <view class="cu-tag bg-red light sm round">{{item.author}}</view>
-                                <view class="cu-tag bg-green light sm round">{{item.category || '未知'}}</view>
-                                <view class="cu-tag bg-yellow light sm round">{{item.sourceName}}</view>
+        <view class="cu-list full-size" :style="loadType === 'classify' ? 'height: calc(100% - 45px);':'height:100%'">
+            <scroll-view :scroll-top="scrollTop" scroll-y="true" @scrolltolower="scrollToBottom" style="height: 100%;">
+                <view class="cu-card article no-card" v-for="(item, index) in result" :key="index"
+                      @tap="bookDetailBtn(item)">
+                    <view class="cu-item shadow">
+                        <view class="content">
+                            <custom-image class="image-size" :url="item.coverUrl"></custom-image>
+                            <view class="desc">
+                                <view class="title text-cut text-shadow">{{item.title}}</view>
+                                <view class="text-content">{{convertIntroduction(item.introduction)}}</view>
+                                <view>
+                                    <view class="cu-tag bg-red light sm round">{{item.author}}</view>
+                                    <view class="cu-tag bg-green light sm round">{{item.category || '未知'}}</view>
+                                    <view class="cu-tag bg-yellow light sm round">{{item.sourceName}}</view>
+                                </view>
                             </view>
                         </view>
                     </view>
                 </view>
-            </view>
+            </scroll-view>
         </view>
-        <back-top></back-top>
+        <back-top @backTop="backTop"></back-top>
     </view>
 </template>
 
@@ -45,7 +48,8 @@
                 result: [],
                 scrollLeft: 0,
                 tabCur: '',
-                categoryInfo: []
+                categoryInfo: [],
+                scrollTop: -1
             };
         },
         onLoad (option) {
@@ -68,14 +72,7 @@
             // 解决h5端,uni.startPullDownRefresh()只能执行一次问题
             setTimeout(() => {
                 uni.startPullDownRefresh();
-            }, 100)
-        },
-        onReachBottom () {
-            if (this.loadType === 'classify') {
-                this.queryConstantResult('more', '/novels/classifyResult');
-            } else if (this.loadType === 'searchResult') {
-                this.queryConstantResult('more', '/novels/searchResult');
-            }
+            }, 100);
         },
         onPullDownRefresh () {
             if (this.loadType === 'classify') {
@@ -91,7 +88,7 @@
                 this.loadParams.category = e.currentTarget.dataset.id;
                 setTimeout(() => {
                     uni.startPullDownRefresh();
-                }, 100)
+                }, 100);
             },
             queryConstantResult (firstOrMore, url) {
                 let params = {
@@ -127,6 +124,19 @@
             },
             convertIntroduction (introduction) {
                 return common.getIntroduction(introduction);
+            },
+            scrollToBottom () {
+                if (this.loadType === 'classify') {
+                    this.queryConstantResult('more', '/novels/classifyResult');
+                } else if (this.loadType === 'searchResult') {
+                    this.queryConstantResult('more', '/novels/searchResult');
+                }
+            },
+            backTop () {
+                this.scrollTop = -1;
+                this.$nextTick(() => {
+                    this.scrollTop = 0;
+                });
             }
         }
     };
@@ -134,36 +144,38 @@
 
 <style lang="scss" scoped>
     .search-result {
+        height: 100%;
 
         .search-classify {
             background-color: white;
+            height: 45px;
         }
 
         .cu-list {
             overflow: auto;
 
             .cu-card {
-                padding-bottom: 10rpx;
+                padding-bottom: 10upx;
 
                 .cu-item {
                     padding: unset;
                     background: unset;
 
                     .content {
-                        padding: 0 15rpx;
+                        padding: 0 15upx;
 
                         .image-size {
-                            width: 180rpx;
-                            margin-top: 18rpx;
+                            width: 180upx;
+                            margin-top: 18upx;
                             height: 8em;
-                            margin-right: 20rpx;
-                            border-radius: 6rpx;
+                            margin-right: 20upx;
+                            border-radius: 6upx;
                         }
 
                         .title {
                             padding: unset;
-                            height: 60rpx;
-                            line-height: 72rpx;
+                            height: 60upx;
+                            line-height: 72upx;
                         }
                     }
                 }

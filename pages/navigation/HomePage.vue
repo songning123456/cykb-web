@@ -1,26 +1,28 @@
 <template>
     <view class="home-page">
         <view class="cu-list full-size">
-            <view class="cu-card article no-card" v-for="(item, index) in result" :key="index"
-                  @tap="bookDetailBtn(item)">
-                <view class="cu-item shadow">
-                    <view class="content">
-                        <custom-image class="image-size" :url="item.coverUrl"></custom-image>
-                        <view class="desc">
-                            <view class="title text-cut text-shadow">{{item.title}}</view>
-                            <view class="text-content">{{item.introduction || '暂无简介...'}}</view>
-                            <view>
-                                <view class="cu-tag bg-red light sm round">{{item.author || '未知'}}</view>
-                                <view class="cu-tag bg-green light sm round">{{item.category || '未知'}}
+            <scroll-view :scroll-top="scrollTop" scroll-y="true" @scrolltolower="scrollToBottom" style="height: 100%;">
+                <view class="cu-card article no-card" v-for="(item, index) in result" :key="index"
+                      @tap="bookDetailBtn(item)">
+                    <view class="cu-item shadow">
+                        <view class="content">
+                            <custom-image class="image-size" :url="item.coverUrl"></custom-image>
+                            <view class="desc">
+                                <view class="title text-cut text-shadow">{{item.title}}</view>
+                                <view class="text-content">{{item.introduction || '暂无简介...'}}</view>
+                                <view>
+                                    <view class="cu-tag bg-red light sm round">{{item.author || '未知'}}</view>
+                                    <view class="cu-tag bg-green light sm round">{{item.category || '未知'}}
+                                    </view>
+                                    <view class="cu-tag bg-yellow light sm round">{{item.sourceName || '未知'}}</view>
                                 </view>
-                                <view class="cu-tag bg-yellow light sm round">{{item.sourceName || '未知'}}</view>
                             </view>
                         </view>
                     </view>
                 </view>
-            </view>
+            </scroll-view>
         </view>
-        <back-top></back-top>
+        <back-top @backTop="backTop"></back-top>
     </view>
 </template>
 
@@ -29,29 +31,28 @@
 
     export default {
         name: 'HomePage',
-        data() {
+        data () {
             return {
                 pageSize: 100,
                 pageResult: [],
-                result: []
+                result: [],
+                scrollTop: -1
             };
         },
-        onLoad() {
+        onLoad () {
+            debugger;
             setTimeout(() => {
                 uni.startPullDownRefresh();
-            }, 100)
+            }, 100);
         },
-        onReachBottom() {
-            this.queryHomePage('more');
-        },
-        onPullDownRefresh() {
+        onPullDownRefresh () {
             this.queryHomePage('first');
         },
-        onNavigationBarButtonTap(e) {
-            uni.navigateTo({url: '/pages/navigation/Search'});
+        onNavigationBarButtonTap (e) {
+            uni.navigateTo({ url: '/pages/navigation/Search' });
         },
         methods: {
-            queryHomePage(type) {
+            queryHomePage (type) {
                 let params = Object.create(null);
                 params.pageRecordNum = this.pageSize;
                 if (type === 'first') {
@@ -79,15 +80,26 @@
                     }
                 });
             },
-            bookDetailBtn(novels) {
-                uni.navigateTo({url: '/pages/bookdetail/BookDetail?novels=' + JSON.stringify(novels)});
-            }
+            bookDetailBtn (novels) {
+                uni.navigateTo({ url: '/pages/bookdetail/BookDetail?novels=' + JSON.stringify(novels) });
+            },
+            scrollToBottom (e) {
+                this.queryHomePage('more');
+            },
+            backTop () {
+                this.scrollTop = -1;
+                this.$nextTick(() => {
+                    this.scrollTop = 0;
+                });
+            },
         }
     };
 </script>
 
 <style lang="scss" scoped>
     .home-page {
+        height: 100%;
+
         .cu-list {
             overflow: auto;
 
