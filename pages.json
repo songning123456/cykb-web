@@ -11,6 +11,12 @@
                         "buttons": [
                             {
                                 "type": "none",
+                                "text": "\ue618",
+                                "fontSrc": "/static/iconfont/reload.ttf",
+                                "float": "left"
+                            },
+                            {
+                                "type": "none",
                                 "text": "\ue603",
                                 "fontSrc": "/static/iconfont/search.ttf",
                                 "float": "right"
