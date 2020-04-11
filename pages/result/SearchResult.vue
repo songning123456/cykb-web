@@ -1,7 +1,7 @@
 <template>
     <view class="search-result">
         <scroll-view v-if="loadType === 'classify'" scroll-x class="nav search-classify" scroll-with-animation
-                     :scroll-left="scrollLeft">
+                     :scroll-left="scrollLeft"  @scroll='scrollOn'>
             <view class="cu-item" :class="{'text-red cur': item.category === tabCur}"
                   v-for="(item,index) in categoryInfo"
                   :key="index" @tap="tabSelect" :data-id="item.category">
@@ -29,7 +29,7 @@
                 </view>
             </scroll-view>
         </view>
-        <back-top @backTop="backTop"></back-top>
+        <back-top @backTop="backTop" v-if="oldScrollTop > 10000"></back-top>
     </view>
 </template>
 
@@ -49,7 +49,8 @@
                 scrollLeft: 0,
                 tabCur: '',
                 categoryInfo: [],
-                scrollTop: -1
+                scrollTop: -1,
+                oldScrollTop: 0
             };
         },
         onLoad (option) {
@@ -125,6 +126,9 @@
             convertIntroduction (introduction) {
                 return common.getIntroduction(introduction);
             },
+            scrollOn(e) {
+                this.oldScrollTop = e.detail.scrollTop;
+            },
             scrollToBottom () {
                 if (this.loadType === 'classify') {
                     this.queryConstantResult('more', '/novels/classifyResult');
@@ -133,7 +137,7 @@
                 }
             },
             backTop () {
-                this.scrollTop = -1;
+                this.scrollTop = this.oldScrollTop;
                 this.$nextTick(() => {
                     this.scrollTop = 0;
                 });

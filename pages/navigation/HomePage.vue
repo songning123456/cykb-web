@@ -1,7 +1,7 @@
 <template>
     <view class="home-page">
         <view class="cu-list full-size">
-            <scroll-view :scroll-top="scrollTop" scroll-y="true" @scrolltolower="scrollToBottom" style="height: 100%;">
+            <scroll-view :scroll-top="scrollTop" scroll-y="true" @scroll='scrollOn' @scrolltolower="scrollToBottom" style="height: 100%;">
                 <view class="cu-card article no-card" v-for="(item, index) in result" :key="index"
                       @tap="bookDetailBtn(item)">
                     <view class="cu-item shadow">
@@ -22,7 +22,7 @@
                 </view>
             </scroll-view>
         </view>
-        <back-top @backTop="backTop"></back-top>
+        <back-top @backTop="backTop" v-if="oldScrollTop > 10000"></back-top>
     </view>
 </template>
 
@@ -36,7 +36,8 @@
                 pageSize: 100,
                 pageResult: [],
                 result: [],
-                scrollTop: -1
+                scrollTop: 0,
+                oldScrollTop: 0
             };
         },
         onLoad () {
@@ -83,11 +84,14 @@
             bookDetailBtn (novels) {
                 uni.navigateTo({ url: '/pages/bookdetail/BookDetail?novels=' + JSON.stringify(novels) });
             },
+            scrollOn(e) {
+                this.oldScrollTop = e.detail.scrollTop;
+            },
             scrollToBottom (e) {
                 this.queryHomePage('more');
             },
             backTop () {
-                this.scrollTop = -1;
+                this.scrollTop = this.oldScrollTop;
                 this.$nextTick(() => {
                     this.scrollTop = 0;
                 });

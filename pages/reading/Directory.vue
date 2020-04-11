@@ -11,14 +11,6 @@
                     </view>
                 </view>
             </scroll-view>
-          <!--  <view class="cu-item arrow" :class="{'chosen-item': item.chaptersId === currentChapterId}"
-                  v-for="(item, index) in directoryList" :key="index" hover-class='hover-class-style'
-                  hover-stay-time='600' @tap="jumpChapterBtn(item.chaptersId)">
-                <view class="content">
-                    <text :class="item.chaptersId === currentChapterId ? 'cuIcon-locationfill text-red' : 'cuIcon-location text-grey'"></text>
-                    <text class="text-grey">{{item.chapter}}</text>
-                </view>
-            </view>-->
         </view>
     </view>
 </template>

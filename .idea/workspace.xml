@@ -37,7 +37,9 @@
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon57.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon72.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/navigation/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/navigation/HomePage.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/reading/Directory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reading/Directory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/result/SearchResult.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/result/SearchResult.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -265,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586597231113</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="优化">
+      <created>1586600600644</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1586600600644</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView">
@@ -334,10 +343,10 @@
     <MESSAGE value="目录 优化" />
     <MESSAGE value="back-top 优化" />
     <MESSAGE value="login 优化" />
-    <MESSAGE value="优化" />
     <MESSAGE value="重写复制" />
     <MESSAGE value="改为邮箱登录" />
     <MESSAGE value="隐藏滚动条" />
-    <option name="LAST_COMMIT_MESSAGE" value="隐藏滚动条" />
+    <MESSAGE value="优化" />
+    <option name="LAST_COMMIT_MESSAGE" value="优化" />
   </component>
 </project>
