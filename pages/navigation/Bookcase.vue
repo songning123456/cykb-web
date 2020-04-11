@@ -119,6 +119,9 @@
                 return convertDate.convertZh(currentDate, updateTime);
             },
             queryBookcase () {
+                if (!(this.userInfo && this.userInfo.uniqueId)) {
+                    return;
+                }
                 let params = {
                     condition: {
                         uniqueId: this.userInfo.uniqueId,
