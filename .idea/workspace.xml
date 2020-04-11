@@ -2,45 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45ed260a-6c42-4d72-99df-95dd60e36009" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/iconfont/reload.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5.tar.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/commonBookcase.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/commonClassify.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/commonHomePage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/commonMy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/selectedBookcase.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/selectedClassify.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/selectedHomePage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/icon/selectedMy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/iconfont/reload.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/iconfont/search.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/image/avatar.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/image/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/index.8e661774.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/chunk-vendors.d748ca97.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/index.eac34f4d.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-bookdetail-BookDetail.5ad935fa.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-comment-Comment.828e4930.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-login-Login.ca901537.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-navigation-Bookcase.a56679dc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-navigation-Classify.255eb388.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-navigation-HomePage.ab7115e1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-navigation-My.1fa66620.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-navigation-Search.46fb4cb1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-reading-Directory.152563a1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-reading-Reading.04de1ca3.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-reading-Reading~pages-reading-SimpleRead.e9940b7c.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-reading-SimpleRead.552647eb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-result-SearchResult.78fc7266.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/js/pages-settings-Settings.f70c2d2e.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon114.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon144.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon57.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/build/h5/static/logo/icon72.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/navigation/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/navigation/HomePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/CustomImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/CustomImage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/bookdetail/BookDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/bookdetail/BookDetail.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -296,7 +260,14 @@
       <option name="project" value="LOCAL" />
       <updated>1586611344868</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="reload功能">
+      <created>1586614058566</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1586614058566</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TodoView">
@@ -371,6 +342,7 @@
     <MESSAGE value="优化" />
     <MESSAGE value="优化返回顶部" />
     <MESSAGE value="修改登录" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改登录" />
+    <MESSAGE value="reload功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="reload功能" />
   </component>
 </project>

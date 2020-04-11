@@ -4,13 +4,13 @@
             <view class="cu-card case no-card margin-bottom-sm">
                 <view class="cu-item shadow">
                     <view class="image text-center">
-                        <custom-image class="cu-avatar image-size" :url="novels.coverUrl"></custom-image>
-                        <view class="margin-top-xs text-gray text-df">{{novels.title}}</view>
+                        <custom-image class="cu-avatar image-size" :url="novels.coverUrl || 'http://'"></custom-image>
+                        <view class="margin-top-xs text-gray text-df">{{novels.title || '未知书名'}}</view>
                         <view class="margin-top-xs">
-                            <view class="cu-tag bg-red light sm round">{{novels.author}}</view>
-                            <view class="cu-tag bg-green light sm round">{{novels.category || '未知'}}
+                            <view class="cu-tag bg-red light sm round">{{novels.author || '未知作者'}}</view>
+                            <view class="cu-tag bg-green light sm round">{{novels.category || '未知类别'}}
                             </view>
-                            <view class="cu-tag bg-yellow light sm round">{{novels.sourceName}}</view>
+                            <view class="cu-tag bg-yellow light sm round">{{novels.sourceName || '未知来源'}}</view>
                         </view>
                     </view>
                 </view>
@@ -20,7 +20,7 @@
                     <text>简介</text>
                 </view>
                 <view class="content padding introduction">
-                    {{novels.introduction}}
+                    {{novels.introduction || '暂无简介...'}}
                 </view>
             </view>
             <view class="cu-list menu">
@@ -29,7 +29,7 @@
                         <text class="text-black">最新章节</text>
                     </view>
                     <view class="action text-cut max-width">
-                        {{novels.latestChapter}}
+                        {{novels.latestChapter || '未知章节'}}
                     </view>
                 </view>
                 <view class="cu-item" @click="changeShowMore">
@@ -77,6 +77,7 @@
             };
         },
         onLoad (option) {
+            console.error(option);
             this.novels = JSON.parse(option.novels);
             this.querySameAuthor();
         },
@@ -102,6 +103,14 @@
                 });
             },
             addBookcase () {
+                if (!(this.novels && this.novels.novelsId)) {
+                    uni.showToast({
+                        title: '不可加入书架',
+                        image: '/static/image/error.png',
+                        duration: 2000
+                    });
+                    return;
+                }
                 if (this.$store.state.userInfo) {
                     let params = {
                         condition: {

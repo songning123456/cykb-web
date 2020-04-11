@@ -1,5 +1,5 @@
 <template>
-    <image @load="imageLoad" @error="imageErr" :src="imageSrc" :mode="mode" :lazy-load="true"></image>
+    <image @load="imageLoad" @error="imageErr" :src="imageSrc" :mode="mode"></image>
 </template>
 
 <script>
