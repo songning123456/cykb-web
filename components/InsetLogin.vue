@@ -1,7 +1,7 @@
 <template>
     <view class="inset-login login-image full-size">
         <view class="login-position">
-            <input placeholder="请输入邮箱\手机号\微信\QQ" v-model='form.code' @confirm='loginBtn'
+            <input type="number" placeholder="请输入手机号" v-model='form.code' @confirm='loginBtn'
                    confirm-type="go"/>
             <button class="cu-btn block bg-red lg" @tap="loginBtn" :loading="loading">一键登录</button>
         </view>
@@ -25,7 +25,7 @@
         },
         methods: {
             loginBtn() {
-                if (!regular.email.test(this.form.code) && !regular.phone.test(this.form.code) && !regular.wx.test(this.form.code) && !regular.qq.test(this.form.code)) {
+                if (!regular.phone.test(this.form.code)) {
                     uni.showToast({
                         title: '输入格式错误',
                         image: '/static/image/error.png',
