@@ -60,11 +60,7 @@
             }
         },
         onShow() {
-            if (this.userInfo) {
-                setTimeout(() => {
-                    uni.startPullDownRefresh();
-                }, 100)
-            }
+            this.queryBookcase();
         },
         watch: {
             // 主要用于 一开始未登录，后来登录；重新加载数据
