@@ -46,7 +46,7 @@
                 <text class="cuIcon-back text-gray" @tap="backBtn"></text>
             </view>
             <view class="content text-cut mask-title" :style="'color:' + skin.fontColor">
-                {{chapterInfo.chapter || '未知'}}
+                {{chapterInfo.chapter || '未知章节'}}
             </view>
         </view>
         <!-- 遮罩层下部分 -->

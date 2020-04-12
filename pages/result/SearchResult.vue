@@ -14,14 +14,14 @@
                       @tap="bookDetailBtn(item)">
                     <view class="cu-item shadow">
                         <view class="content">
-                            <custom-image class="image-size" :url="item.coverUrl"></custom-image>
+                            <custom-image class="image-size" :url="item.coverUrl || 'http://'"></custom-image>
                             <view class="desc">
-                                <view class="title text-cut text-shadow">{{item.title}}</view>
-                                <view class="text-content">{{convertIntroduction(item.introduction)}}</view>
+                                <view class="title text-cut text-shadow">{{item.title || '未知书名'}}</view>
+                                <view class="text-content">{{item.introduction || '暂无简介...'}}</view>
                                 <view>
-                                    <view class="cu-tag bg-red light sm round">{{item.author}}</view>
-                                    <view class="cu-tag bg-green light sm round">{{item.category || '未知'}}</view>
-                                    <view class="cu-tag bg-yellow light sm round">{{item.sourceName}}</view>
+                                    <view class="cu-tag bg-red light sm round">{{item.author || '未知作者'}}</view>
+                                    <view class="cu-tag bg-green light sm round">{{item.category || '未知类别'}}</view>
+                                    <view class="cu-tag bg-yellow light sm round">{{item.sourceName  || '未知来源'}}</view>
                                 </view>
                             </view>
                         </view>
@@ -35,7 +35,6 @@
 
 <script>
     import request from '../../util/request';
-    import common from '../../util/common';
 
     export default {
         name: 'SearchResult',
@@ -122,9 +121,6 @@
             },
             bookDetailBtn (novels) {
                 uni.navigateTo({ url: '/pages/bookdetail/BookDetail?novels=' + JSON.stringify(novels) });
-            },
-            convertIntroduction (introduction) {
-                return common.getIntroduction(introduction);
             },
             scrollOn(e) {
                 this.oldScrollTop = e.detail.scrollTop;
