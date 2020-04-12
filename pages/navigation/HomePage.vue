@@ -37,7 +37,8 @@
                 pageResult: [],
                 result: [],
                 scrollTop: 0,
-                oldScrollTop: 0
+                oldScrollTop: 0,
+                scrollBottomStatus: false
             };
         },
         onLoad () {
@@ -82,6 +83,9 @@
                     if (type === 'first') {
                         uni.stopPullDownRefresh();//得到数据后停止下拉刷新
                     }
+                    if (this.scrollBottomStatus) {
+                        this.scrollBottomStatus = false;
+                    }
                 });
             },
             bookDetailBtn (novels) {
@@ -91,6 +95,11 @@
                 this.oldScrollTop = e.detail.scrollTop;
             },
             scrollToBottom (e) {
+                if (this.scrollBottomStatus) {
+                    return;
+                } else {
+                    this.scrollBottomStatus = true;
+                }
                 this.queryHomePage('more');
             },
             backTop () {
