@@ -12,7 +12,7 @@
             },
             defaultImage: {
                 type: String,
-                default: '../static/image/avatar.jpg'
+                default: '/static/image/avatar.jpg'
             },
             url: {
                 type: String,

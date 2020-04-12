@@ -41,7 +41,6 @@
             };
         },
         onLoad () {
-            debugger;
             setTimeout(() => {
                 uni.startPullDownRefresh();
             }, 100);

@@ -77,7 +77,6 @@
             };
         },
         onLoad (option) {
-            console.error(option);
             this.novels = JSON.parse(option.novels);
             this.querySameAuthor();
         },
