@@ -77,7 +77,11 @@
             }
         },
         onNavigationBarButtonTap(e) {
-            uni.navigateTo({url: '/pages/navigation/Search'});
+            if (e.type === 'delete') {
+                console.error(e);
+            } else {
+                uni.navigateTo({url: '/pages/navigation/Search'});
+            }
         },
         methods: {
             startReading (item) {

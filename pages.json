@@ -10,15 +10,15 @@
                         "backgroundColor": "#e54d42",
                         "buttons": [
                             {
-                                "type": "none",
+                                "type": "reload",
                                 "text": "\ue618",
-                                "fontSrc": "/static/iconfont/reload.ttf",
+                                "fontSrc": "/static/iconfont/iconfont.ttf",
                                 "float": "left"
                             },
                             {
-                                "type": "none",
+                                "type": "search",
                                 "text": "\ue603",
-                                "fontSrc": "/static/iconfont/search.ttf",
+                                "fontSrc": "/static/iconfont/iconfont.ttf",
                                 "float": "right"
                             }
                         ]
@@ -39,9 +39,9 @@
                         "backgroundColor": "#e54d42",
                         "buttons": [
                             {
-                                "type": "none",
+                                "type": "search",
                                 "text": "\ue603",
-                                "fontSrc": "/static/iconfont/search.ttf",
+                                "fontSrc": "/static/iconfont/iconfont.ttf",
                                 "float": "right"
                             }
                         ]
@@ -58,7 +58,7 @@
                         "autoBackButton": "false",
                         "buttons": [
                             {
-                                "type": "none",
+                                "type": "cancel",
                                 "text": "取消",
                                 "float": "right",
                                 "fontSize": "15px"
@@ -85,9 +85,15 @@
                         "backgroundColor": "#e54d42",
                         "buttons": [
                             {
-                                "type": "none",
+                                "type": "delete",
+                                "text": "\ue63a",
+                                "fontSrc": "/static/iconfont/iconfont.ttf",
+                                "float": "left"
+                            },
+                            {
+                                "type": "search",
                                 "text": "\ue603",
-                                "fontSrc": "/static/iconfont/search.ttf",
+                                "fontSrc": "/static/iconfont/iconfont.ttf",
                                 "float": "right"
                             }
                         ]

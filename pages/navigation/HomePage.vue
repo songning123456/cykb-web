@@ -50,7 +50,7 @@
             this.queryHomePage('first');
         },
         onNavigationBarButtonTap (e) {
-            if (e.fontSrc.includes('reload')) {
+            if (e.type === 'reload') {
                 location.reload();
             } else {
                 uni.navigateTo({ url: '/pages/navigation/Search' });
