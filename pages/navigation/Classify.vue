@@ -70,11 +70,11 @@
             },
             searchBtn(sourceName) {
                 uni.navigateTo({
-                    url: '/pages/result/SearchResult?params=' + JSON.stringify({
+                    url: '/pages/result/SearchResult?params=' + encodeURIComponent(JSON.stringify({
                         type: 'classify',
                         sourceName: sourceName,
                         categoryInfo: this.categoryResult[sourceName]
-                    })
+                    }))
                 });
             }
         }

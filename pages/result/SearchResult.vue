@@ -53,7 +53,7 @@
             };
         },
         onLoad (option) {
-            let response = JSON.parse(option.params);
+            let response = JSON.parse(decodeURIComponent(option.params));
             this.loadType = response.type;
             if (response.type === 'classify') {
                 this.categoryInfo = response.categoryInfo;
@@ -120,7 +120,7 @@
                 });
             },
             bookDetailBtn (novels) {
-                uni.navigateTo({ url: '/pages/bookdetail/BookDetail?novels=' + JSON.stringify(novels) });
+                uni.navigateTo({ url: '/pages/bookdetail/BookDetail?novels=' + encodeURIComponent(JSON.stringify(novels)) });
             },
             scrollOn(e) {
                 this.oldScrollTop = e.detail.scrollTop;

@@ -24,7 +24,7 @@
             };
         },
         onLoad (option) {
-            if (option.navigatePage === 'back') {
+            if (JSON.parse(decodeURIComponent(option.navigatePage)) === 'back') {
                 this.operateType = 'back';
             }
         },

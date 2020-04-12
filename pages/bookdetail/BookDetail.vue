@@ -77,7 +77,7 @@
             };
         },
         onLoad (option) {
-            this.novels = JSON.parse(option.novels);
+            this.novels = JSON.parse(decodeURIComponent(option.novels));
             this.querySameAuthor();
         },
         methods: {
@@ -97,9 +97,7 @@
                 });
             },
             SimilarBookBtn (novels) {
-                uni.navigateTo({
-                    url: '/pages/bookdetail/BookDetail?novels=' + novels
-                });
+                uni.navigateTo({ url: '/pages/bookdetail/BookDetail?novels=' + encodeURIComponent(JSON.stringify(novels))});
             },
             addBookcase () {
                 if (!(this.novels && this.novels.novelsId)) {
@@ -129,11 +127,11 @@
                         uni.hideLoading();
                     });
                 } else {
-                    uni.navigateTo({ url: '/pages/login/Login?navigatePage=back' });
+                    uni.navigateTo({ url: '/pages/login/Login?navigatePage=' + encodeURIComponent(JSON.stringify('back'))});
                 }
             },
             startReading () {
-                uni.navigateTo({ url: '/pages/reading/SimpleRead?novels=' + JSON.stringify(this.novels) });
+                uni.navigateTo({ url: '/pages/reading/SimpleRead?novels=' + encodeURIComponent(JSON.stringify(this.novels)) });
             }
         }
     };

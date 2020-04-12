@@ -85,7 +85,7 @@
                 });
             },
             bookDetailBtn (novels) {
-                uni.navigateTo({ url: '/pages/bookdetail/BookDetail?novels=' + JSON.stringify(novels) });
+                uni.navigateTo({ url: '/pages/bookdetail/BookDetail?novels=' + encodeURIComponent(JSON.stringify(novels)) });
             },
             scrollOn(e) {
                 this.oldScrollTop = e.detail.scrollTop;

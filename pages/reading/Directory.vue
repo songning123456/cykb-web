@@ -37,8 +37,8 @@
             }
         },
         onLoad (option) {
-            this.directoryList = JSON.parse(option.directory);
-            this.currentChapterId = option.currentChapterId;
+            this.directoryList = JSON.parse(decodeURIComponent(option.directory));
+            this.currentChapterId = JSON.parse(decodeURIComponent(option.currentChapterId));
             if (this.directoryList && this.directoryList.length && this.currentChapterId) {
                 if (uni.getStorageSync('systemInfo') && uni.getStorageSync('systemInfo').windowHeight) {
                     this.halfHeight = uni.getStorageSync('systemInfo').windowHeight / 2;

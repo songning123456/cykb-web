@@ -108,7 +108,7 @@
                 this.listTouchDirection = null;
             },
             startReading (item) {
-                uni.navigateTo({ url: '/pages/reading/SimpleRead?novels=' + JSON.stringify(item) });
+                uni.navigateTo({ url: '/pages/reading/SimpleRead?novels=' + encodeURIComponent(JSON.stringify(item)) });
             },
             navChange () {
                 uni.switchTab({
