@@ -80,10 +80,13 @@
             },
             isToDelete(newVal, oldVal) {
                 let ftDoc = document.getElementsByClassName('uni-page-head-ft') && document.getElementsByClassName('uni-page-head-ft')[0];
+                let barDoc = document.getElementsByClassName('uni-tabbar') && document.getElementsByClassName('uni-tabbar')[0];
                 if (newVal) {
                     ftDoc.style.display = 'none';
+                    barDoc.style.display = 'none';
                 } else {
                     ftDoc.style.display = 'inherit';
+                    barDoc.style.display = 'inline-flex';
                 }
             }
         },
