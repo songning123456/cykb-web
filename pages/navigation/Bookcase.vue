@@ -60,7 +60,11 @@
             }
         },
         onShow() {
-            this.queryBookcase();
+            if (this.userInfo) {
+                setTimeout(() => {
+                    uni.startPullDownRefresh();
+                }, 100)
+            }
         },
         watch: {
             // 主要用于 一开始未登录，后来登录；重新加载数据
@@ -186,7 +190,7 @@
 
 <style lang="scss" scoped>
     .book-case {
-
+        height: 100%;
         .cu-list {
             overflow-y: auto;
 
