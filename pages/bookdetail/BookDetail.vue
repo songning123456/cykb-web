@@ -38,13 +38,13 @@
                         <text class="lg text-gray cuIcon-right"></text>
                     </view>
                 </view>
-                <scroll-view scroll-x="true" scroll-y="true" class="author-books margin-bottom-sm" v-show="showMore">
+                <scroll-view scroll-x="true" class="author-books margin-bottom-sm" v-show="showMore">
                     <block v-for="(item, index) in authorBooks" :key="index">
                         <view class="author-book" @tap="SimilarBookBtn(item)">
                             <view class="avatar-img">
-                                <custom-image :url="item.coverUrl" class="uni-image"></custom-image>
+                                <custom-image :url="item.coverUrl || 'http://'"></custom-image>
                             </view>
-                            <view class="text-cut text-center">{{item.title}}</view>
+                            <view class="text-cut text-center">{{item.title || '未知书名'}}</view>
                         </view>
                     </block>
                 </scroll-view>

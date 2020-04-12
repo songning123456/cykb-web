@@ -1,6 +1,22 @@
 <template>
     <view class="search">
         <view class="cu-card case no-card history-card" v-if="!fastResult.length">
+            <view class="cu-bar solid-bottom" v-if="ourSearchResult.length">
+                <view class="action">
+                    <text class="cuIcon-attention text-red"></text>
+                    大家都在搜
+                </view>
+            </view>
+            <scroll-view scroll-x="true" class="our-searches margin-bottom-sm" v-if="ourSearchResult.length">
+                <block v-for="(item, index) in ourSearchResult" :key="index">
+                    <view class="our-search" @tap="ourSearchDetailBtn(item)">
+                        <view class="avatar-img">
+                            <custom-image :url="item.coverUrl || 'http://'"></custom-image>
+                        </view>
+                        <view class="text-cut text-center">{{item.title || '未知书名'}}</view>
+                    </view>
+                </block>
+            </scroll-view>
             <view class="cu-bar solid-bottom">
                 <view class="action">
                     <text class="cuIcon-time text-red"></text>
@@ -13,8 +29,8 @@
             <view class="cu-list menu text-left solid-top">
                 <view class="cu-item" v-for="(item, index) in searchHistory" :key="index" @tap="queryHistoryBtn(item)">
                     <view class="content" v-if="item.novels">
-                        <text class="text-grey">{{item.novels.title}}</text>
-                        <text class="padding-left-xl text-gray">{{item.novels.author}}</text>
+                        <text class="text-grey">{{item.novels.title || '未知书名'}}</text>
+                        <text class="padding-left-xl text-gray">{{item.novels.author || '未知作者'}}</text>
                     </view>
                     <view class="content" v-else>
                         <text class="text-grey">{{item.authorOrTitle}}</text>
@@ -25,8 +41,8 @@
         <view class="cu-list menu text-left solid-top fast-result" v-if="fastResult.length">
             <view class="cu-item" v-for="(item, index) in fastResult" :key="index" @tap="fastSearchBtn(item)">
                 <view class="content">
-                    <text class="text-grey">{{item.title}}</text>
-                    <text class="padding-left-xl text-gray">{{item.author}}</text>
+                    <text class="text-grey">{{item.title || '未知书名'}}</text>
+                    <text class="padding-left-xl text-gray">{{item.author || '未知作者'}}</text>
                 </view>
             </view>
         </view>
@@ -42,8 +58,12 @@
             return {
                 searchHistory: [],
                 fastResult: [],
-                debounceTimeout: null
+                debounceTimeout: null,
+                ourSearchResult: []
             };
+        },
+        created() {
+            this.ourSearchQueryBtn();
         },
         onLoad() {
             this.searchHistory = uni.getStorageSync('searchHistory') || [];
@@ -130,7 +150,17 @@
             deleteSearchHistoryBtn() {
                 this.searchHistory = [];
                 uni.removeStorageSync('searchHistory');
-            }
+            },
+            ourSearchQueryBtn() {
+                request.get('/relation/ourSearch', {}).then(data => {
+                    if (data.status === 200 && data.total > 0) {
+                        this.ourSearchResult = data.data;
+                    }
+                })
+            },
+            ourSearchDetailBtn (novels) {
+                uni.navigateTo({ url: '/pages/bookdetail/BookDetail?novels=' + encodeURIComponent(JSON.stringify(novels))});
+            },
         }
     };
 </script>
@@ -164,6 +194,33 @@
         }
 
         .history-card {
+
+            .our-searches {
+                white-space: nowrap; // 滚动必须加的属性
+                width: 100%;
+                padding: 20upx;
+                margin: 0 auto;
+
+                .our-search {
+                    width: 24%;
+                    margin-right: 20upx;
+                    display: inline-block;
+                    vertical-align: top;
+
+                    .avatar-img {
+                        display: inline-block;
+                        height: 220upx;
+                        width: 165upx;
+                        border-radius: 6upx;
+                        position: relative;
+
+                        .custom-image {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
 
             .solid-top::after {
                 border-top: unset;
