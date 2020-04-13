@@ -162,7 +162,7 @@
                 request.post('/relation/bookcase', params).then(data => {
                     if (data.status === 200 && data.total > 0) {
                         this.result = data.data;
-                    } else {
+                    } else if (data.status === 202 && data.message === '书架暂无您的书籍'){
                         this.result = [];
                     }
                 }).finally(() => {
