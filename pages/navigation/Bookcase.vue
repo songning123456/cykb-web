@@ -60,34 +60,55 @@
             }
         },
         onShow() {
+            // 判断左侧删除按钮是否存在
+            let hdDoc = document.getElementsByClassName('uni-page-head-hd') && document.getElementsByClassName('uni-page-head-hd')[0];
             if (this.userInfo) {
+                hdDoc.style.opacity = '1';
+                hdDoc.style.pointEvents = 'auto';
                 setTimeout(() => {
                     uni.startPullDownRefresh();
                 }, 100)
+            } else {
+                hdDoc.style.opacity = '0';
+                hdDoc.style.pointEvents = 'none';
             }
         },
         watch: {
-            // 主要用于 一开始未登录，后来登录；重新加载数据
-            userInfo (newVal, oldVal) {
-                if (newVal && !oldVal) {
-                    setTimeout(() => {
-                        uni.startPullDownRefresh();
-                    }, 100)
-                }
+            userInfo: {
+                handler(newVal, oldVal) {
+                    // 主要用于 一开始未登录，后来登录；重新加载数据
+                    if (newVal && !oldVal) {
+                        // 当用户存在时，左侧删除按钮一定存在
+                        let hdDoc = document.getElementsByClassName('uni-page-head-hd') && document.getElementsByClassName('uni-page-head-hd')[0];
+                        hdDoc.style.opacity = '1';
+                        hdDoc.style.pointEvents = 'auto';
+                        setTimeout(() => {
+                            uni.startPullDownRefresh();
+                        }, 100)
+                    }
+                },
+                immediate: true
             },
             sortType (newVal, oldVal) {
                 this.queryBookcase();
             },
-            isToDelete(newVal, oldVal) {
-                let ftDoc = document.getElementsByClassName('uni-page-head-ft') && document.getElementsByClassName('uni-page-head-ft')[0];
-                let barDoc = document.getElementsByClassName('uni-tabbar') && document.getElementsByClassName('uni-tabbar')[0];
-                if (newVal) {
-                    ftDoc.style.display = 'none';
-                    barDoc.style.display = 'none';
-                } else {
-                    ftDoc.style.display = 'inherit';
-                    barDoc.style.display = 'inline-flex';
-                }
+            isToDelete: {
+                handler(newVal, oldVal) {
+                    let ftDoc = document.getElementsByClassName('uni-page-head-ft') && document.getElementsByClassName('uni-page-head-ft')[0];
+                    let barDoc = document.getElementsByClassName('uni-tabbar') && document.getElementsByClassName('uni-tabbar')[0];
+                    if (newVal) {
+                        ftDoc.style.opacity = '0';
+                        ftDoc.style.pointEvents = 'none';
+                        barDoc.style.opacity = '0';
+                        barDoc.style.pointEvents = 'none';
+                    } else {
+                        ftDoc.style.opacity = '1';
+                        ftDoc.style.pointEvents = 'auto';
+                        barDoc.style.opacity = '1';
+                        barDoc.style.pointEvents = 'auto';
+                    }
+                },
+                immediate: true
             }
         },
         onPullDownRefresh () {
