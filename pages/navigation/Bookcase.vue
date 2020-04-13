@@ -159,6 +159,7 @@
                         sortType: this.sortType
                     }
                 };
+                this.result = [];
                 request.post('/relation/bookcase', params).then(data => {
                     if (data.status === 200 && data.total > 0) {
                         this.result = data.data;
