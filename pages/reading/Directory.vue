@@ -3,9 +3,8 @@
         <view class="cu-list menu">
             <scroll-view :scroll-top="scrollTop" scroll-y="true" style="height: 100%;">
                 <view class="cu-item dir-item" :class="{'chosen-item': item.chaptersId === currentChapterId}"
-                      v-for="(item, index) in directoryList" :key="index" hover-class='hover-class-style'
-                      hover-stay-time='600' @tap="jumpChapterBtn(item.chaptersId)">
-                    <view class="content">
+                      v-for="(item, index) in directoryList" :key="index" @tap="jumpChapterBtn(item.chaptersId)">
+                    <view class="content text-cut">
                         <text class='text-icon' :class="item.chaptersId === currentChapterId ? 'cuIcon-locationfill text-red' : 'cuIcon-location text-grey'"></text>
                         <text class="text-grey">{{item.chapter}}</text>
                     </view>
@@ -155,10 +154,5 @@
                 pointer-events: none;
             }
         }
-    }
-
-    .hover-class-style {
-        opacity: 0.9;
-        background: #f7f7f7 !important;
     }
 </style>
