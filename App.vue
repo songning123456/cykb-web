@@ -21,16 +21,6 @@
                     this.$store.commit('SET_SORTTYPE', '最近阅读');
                 }
             });
-            // 暗黑模式
-            uni.getStorage({
-                key: 'isDark',
-                success: data => {
-                    this.$store.commit('SET_ISDARK', data.data);
-                },
-                fail: e => {
-                    this.$store.commit('SET_ISDARK', false);
-                }
-            });
             // 缓存系统信息
             uni.getSystemInfo({
                 success: function (e) {

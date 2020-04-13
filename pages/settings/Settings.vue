@@ -6,10 +6,6 @@
                 <view class="content">
                     <view>{{item.title}}</view>
                 </view>
-                <view class="action" v-if="item.icon === 'switch'">
-                    <switch @change='nightModeBtn' :checked="isDark" :class="{'checked': isDark}"
-                            class="red"></switch>
-                </view>
                 <view class="action" v-if="item.icon === 'text'">
                     <text class="text-gray">{{sortType}}</text>
                 </view>
@@ -57,9 +53,6 @@
             sortType () {
                 return this.$store.state.sortType;
             },
-            isDark () {
-                return this.$store.state.isDark;
-            },
             settings () {
                 let icons = [{
                     icon: 'arrow',
@@ -72,10 +65,6 @@
                 }];
                 let result = [
                     {
-                        icon: 'switch',
-                        title: '夜间模式',
-                        type: 'nightMode'
-                    }, {
                         icon: 'arrow',
                         title: '清理缓存',
                         type: 'storage'
@@ -116,7 +105,6 @@
                                         uni.clearStorageSync();
                                         this.$store.commit('SET_USERINFO', null);
                                         this.$store.commit('SET_SORTTYPE', '最近阅读');
-                                        this.$store.commit('SET_ISDARK', false);
                                         uni.showToast({ title: '清理完成', duration: 1000 });
                                         // 系统信息
                                         uni.getSystemInfo({
@@ -136,9 +124,6 @@
             sortBtn (e) {
                 this.$store.commit('SET_SORTTYPE', e.currentTarget.dataset.sort);
                 this.sortModal = false;
-            },
-            nightModeBtn (e) {
-                this.$store.commit('SET_ISDARK', e.detail.value);
             },
             hideSortModal () {
                 this.sortModal = false;
