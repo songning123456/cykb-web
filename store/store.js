@@ -6,7 +6,8 @@ const store = new Vuex.Store({
     state: {
         userInfo: null,
         sortType: '最近阅读',
-        isDark: false
+        isDark: false,
+        navigateParams: null
     },
     mutations: {
         SET_USERINFO: (state, userInfo) => {
@@ -20,6 +21,14 @@ const store = new Vuex.Store({
         SET_ISDARK: (state, isDark) => {
             state.isDark = isDark;
             uni.setStorageSync('isDark', isDark);
+        },
+        SET_NAVIGATEPARAMS: (state, navigateParams) => {
+            state.navigateParams = navigateParams;
+        }
+    },
+    getters: {
+        GET_NAVIGATEPARAMS: (state) => {
+            return state.navigateParams;
         }
     },
     actions: {}

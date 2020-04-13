@@ -76,8 +76,8 @@
                 showMore: true
             };
         },
-        onLoad (option) {
-            this.novels = JSON.parse(decodeURIComponent(option.novels));
+        onLoad () {
+            this.novels = this.$store.getters.GET_NAVIGATEPARAMS.novels;
             this.querySameAuthor();
         },
         methods: {
@@ -97,7 +97,8 @@
                 });
             },
             SimilarBookBtn (novels) {
-                uni.navigateTo({ url: '/pages/bookdetail/BookDetail?novels=' + encodeURIComponent(JSON.stringify(novels))});
+                this.$store.commit('SET_NAVIGATEPARAMS', {novels: novels});
+                uni.navigateTo({ url: '/pages/bookdetail/BookDetail'});
             },
             addBookcase () {
                 if (!(this.novels && this.novels.novelsId)) {
@@ -127,11 +128,13 @@
                         uni.hideLoading();
                     });
                 } else {
-                    uni.navigateTo({ url: '/pages/login/Login?navigatePage=' + encodeURIComponent(JSON.stringify('back'))});
+                    this.$store.commit('SET_NAVIGATEPARAMS', {navigatePage: 'back'});
+                    uni.navigateTo({ url: '/pages/login/Login'});
                 }
             },
             startReading () {
-                uni.navigateTo({ url: '/pages/reading/SimpleRead?novels=' + encodeURIComponent(JSON.stringify(this.novels)) });
+                this.$store.commit('SET_NAVIGATEPARAMS', {novels: this.novels});
+                uni.navigateTo({ url: '/pages/reading/SimpleRead'});
             }
         }
     };

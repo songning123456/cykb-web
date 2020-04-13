@@ -35,9 +35,10 @@
                 doc.removeEventListener('click', this.topBottomBtn);
             }
         },
-        onLoad (option) {
-            this.directoryList = JSON.parse(decodeURIComponent(option.directory));
-            this.currentChapterId = JSON.parse(decodeURIComponent(option.currentChapterId));
+        onLoad () {
+            let response = this.$store.getters.GET_NAVIGATEPARAMS;
+            this.directoryList = response.directory;
+            this.currentChapterId = response.currentChapterId;
             if (this.directoryList && this.directoryList.length && this.currentChapterId) {
                 if (uni.getStorageSync('systemInfo') && uni.getStorageSync('systemInfo').windowHeight) {
                     this.halfHeight = uni.getStorageSync('systemInfo').windowHeight / 2;

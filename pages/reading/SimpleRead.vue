@@ -145,8 +145,8 @@
                 scrollTop: 0
             };
         },
-        onLoad(option) {
-            this.novels = JSON.parse(decodeURIComponent(option.novels));
+        onLoad() {
+            this.novels = this.$store.getters.GET_NAVIGATEPARAMS.novels;
             if (uni.getStorageSync('skin')) {
                 this.skin = uni.getStorageSync('skin');
             }
@@ -268,9 +268,8 @@
                 }
             },
             directoryBtn() {
-                uni.navigateTo({
-                    url: '/pages/reading/Directory?directory=' + encodeURIComponent(JSON.stringify(this.directory)) + '&currentChapterId=' + encodeURIComponent(JSON.stringify(this.chapterInfo.chaptersId))
-                });
+                this.$store.commit('SET_NAVIGATEPARAMS', {directory: this.directory, currentChapterId: this.chapterInfo.chaptersId});
+                uni.navigateTo({ url: '/pages/reading/Directory' });
             },
             //滑块设置字体间距或大小
             sliderChange(e, type) {

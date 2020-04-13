@@ -135,7 +135,8 @@
         methods: {
             startReading (item) {
                 if (!this.isToDelete) {
-                    uni.navigateTo({ url: '/pages/reading/SimpleRead?novels=' + encodeURIComponent(JSON.stringify(item)) });
+                    this.$store.commit('SET_NAVIGATEPARAMS', {novels: item});
+                    uni.navigateTo({ url: '/pages/reading/SimpleRead' });
                 }
             },
             navChange () {

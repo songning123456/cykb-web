@@ -57,14 +57,10 @@
                         this.shareModal = true;
                         break;
                     case 'comment':
-                        uni.navigateTo({
-                            url: '/pages/comment/Comment'
-                        });
+                        uni.navigateTo({ url: '/pages/comment/Comment' });
                         break;
                     case 'settings':
-                        uni.navigateTo({
-                            url: '/pages/settings/Settings'
-                        });
+                        uni.navigateTo({ url: '/pages/settings/Settings' });
                         break;
                 }
             },

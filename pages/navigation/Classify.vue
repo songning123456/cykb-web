@@ -69,13 +69,12 @@
                 });
             },
             searchBtn(sourceName) {
-                uni.navigateTo({
-                    url: '/pages/result/SearchResult?params=' + encodeURIComponent(JSON.stringify({
+                this.$store.commit('SET_NAVIGATEPARAMS', {params: {
                         type: 'classify',
                         sourceName: sourceName,
                         categoryInfo: this.categoryResult[sourceName]
-                    }))
-                });
+                    }});
+                uni.navigateTo({ url: '/pages/result/SearchResult' });
             }
         }
     };

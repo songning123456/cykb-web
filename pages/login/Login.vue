@@ -23,8 +23,8 @@
                 loading: false
             };
         },
-        onLoad (option) {
-            if (JSON.parse(decodeURIComponent(option.navigatePage)) === 'back') {
+        onLoad () {
+            if (this.$store.getters.GET_NAVIGATEPARAMS.navigatePage === 'back') {
                 this.operateType = 'back';
             }
         },

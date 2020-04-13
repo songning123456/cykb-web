@@ -91,12 +91,8 @@
                 this.searchHistory = this.searchHistory.filter(item => item.authorOrTitle !== e.detail.value);
                 this.searchHistory.unshift(obj);
                 uni.setStorageSync('searchHistory', this.searchHistory);
-                uni.navigateTo({
-                    url: '/pages/result/SearchResult?params=' + encodeURIComponent(JSON.stringify({
-                        type: 'searchResult',
-                        authorOrTitle: e.text
-                    }))
-                });
+                this.$store.commit('SET_NAVIGATEPARAMS', {params: { type: 'searchResult', authorOrTitle: e.text }});
+                uni.navigateTo({ url: '/pages/result/SearchResult' });
             }
         },
         methods: {
@@ -108,7 +104,8 @@
                 this.searchHistory = this.searchHistory.filter(item => item.authorOrTitle !== (novels.title + '    ' + novels.author));
                 this.searchHistory.unshift(obj);
                 uni.setStorageSync('searchHistory', this.searchHistory);
-                uni.navigateTo({url: '/pages/bookdetail/BookDetail?novels=' + encodeURIComponent(JSON.stringify(novels))});
+                this.$store.commit('SET_NAVIGATEPARAMS', {novels: novels});
+                uni.navigateTo({url: '/pages/bookdetail/BookDetail'});
             },
             queryHistoryBtn(history) {
                 let src = uni.getStorageSync('searchHistory');
@@ -125,14 +122,14 @@
                     uni.setStorageSync('searchHistory', result);
                 }
                 if (history.novels) {
-                    uni.navigateTo({url: '/pages/bookdetail/BookDetail?novels=' + encodeURIComponent(JSON.stringify(history.novels))});
+                    this.$store.commit('SET_NAVIGATEPARAMS', {novels: history.novels});
+                    uni.navigateTo({url: '/pages/bookdetail/BookDetail' });
                 } else {
-                    uni.navigateTo({
-                        url: '/pages/result/SearchResult?params=' + encodeURIComponent(JSON.stringify({
+                    this.$store.commit('SET_NAVIGATEPARAMS', {params: {
                             type: 'searchResult',
                             authorOrTitle: history.authorOrTitle
-                        }))
-                    });
+                        }});
+                    uni.navigateTo({ url: '/pages/result/SearchResult'});
                 }
             },
             fastQueryBooks(authorOrTitle) {
@@ -159,7 +156,8 @@
                 })
             },
             ourSearchDetailBtn (novels) {
-                uni.navigateTo({ url: '/pages/bookdetail/BookDetail?novels=' + encodeURIComponent(JSON.stringify(novels))});
+                this.$store.commit('SET_NAVIGATEPARAMS', {novels: novels});
+                uni.navigateTo({ url: '/pages/bookdetail/BookDetail'});
             },
         }
     };
