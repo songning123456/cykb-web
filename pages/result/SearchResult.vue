@@ -124,7 +124,7 @@
                 });
             },
             bookDetailBtn (novels) {
-                this.$store.commit('SET_NAVIGATEPARAMS', novels);
+                this.$store.commit('SET_NAVIGATEPARAMS', {novels: novels});
                 uni.navigateTo({ url: '/pages/bookdetail/BookDetail'});
             },
             scrollOn(e) {
