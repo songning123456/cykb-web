@@ -159,10 +159,11 @@
                         sortType: this.sortType
                     }
                 };
-                this.result = [];
                 request.post('/relation/bookcase', params).then(data => {
                     if (data.status === 200 && data.total > 0) {
                         this.result = data.data;
+                    } else {
+                        this.result = [];
                     }
                 }).finally(() => {
                     uni.stopPullDownRefresh();//得到数据后停止下拉刷新
