@@ -257,9 +257,14 @@
             setScrollInfo(scrollTop) {
                 try {
                     let storage = {
+                        novelsId: this.novels.novelsId,
+                        coverUrl: this.novels.coverUrl,
+                        title: this.novels.title,
                         chapter: this.chapterInfo.chapter,
                         chaptersId: this.chapterInfo.chaptersId,
-                        novelsId: this.novels.novelsId,
+                        author: this.novels.author,
+                        category: this.novels.category,
+                        sourceName: this.novels.sourceName,
                         scrollTop: scrollTop
                     };
                     uni.setStorageSync(this.novels.novelsId + ':scrollInfo', storage);

@@ -66,7 +66,7 @@
                 let result = [
                     {
                         icon: 'arrow',
-                        title: '清理缓存',
+                        title: '书籍缓存',
                         type: 'storage'
                     }
                 ];
@@ -96,28 +96,15 @@
                     case 'nightMode':
                         break;
                     case 'storage':
-                        uni.showModal({
-                            title: '提示',
-                            content: '确定清空信息?',
-                            success: res => {
-                                if (res.confirm) {
-                                    try {
-                                        uni.clearStorageSync();
-                                        this.$store.commit('SET_USERINFO', null);
-                                        this.$store.commit('SET_SORTTYPE', '最近阅读');
-                                        uni.showToast({ title: '清理完成', duration: 1000 });
-                                        // 系统信息
-                                        uni.getSystemInfo({
-                                            success: e => {
-                                                uni.setStorageSync('systemInfo', e);
-                                            }
-                                        });
-                                    } catch (e) {
-                                        console.error(e);
-                                    }
-                                }
+                        let allStorage = uni.getStorageInfoSync();
+                        let flag = false;
+                        for (let item of allStorage.keys) {
+                            if (item.includes('scrollInfo')) {
+                                flag = true;
+                                break;
                             }
-                        });
+                        }
+                        flag && uni.navigateTo({ url: '/pages/cache/NovelsCache'});
                         break;
                 }
             },

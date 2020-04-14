@@ -118,6 +118,26 @@
             }
         },
         {
+            "path": "pages/cache/NovelsCache",
+            "style": {
+                "disableScroll": true,
+                "h5": {
+                    "titleNView": {
+                        "titleText": "书籍缓存",
+                        "backgroundColor": "#e54d42",
+                        "buttons": [
+                            {
+                                "type": "none",
+                                "text": "\ue61c",
+                                "fontSrc": "/static/iconfont/iconfont.ttf",
+                                "float": "right"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
             "path": "pages/login/Login",
             "style": {
                 "navigationBarTitleText": "登录",
@@ -147,13 +167,6 @@
                 "navigationBarTitleText": "书籍详情",
                 "navigationBarBackgroundColor": "#e54d42",
                 "disableScroll": true
-            }
-        },
-        {
-            "path": "pages/reading/Reading",
-            "style": {
-                "navigationBarTitleText": "",
-                "navigationBarBackgroundColor": "#e54d42"
             }
         },
         {

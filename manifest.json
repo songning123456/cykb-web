@@ -79,7 +79,7 @@
         },
         "optimization" : {
             "treeShaking" : {
-                "enable" : true
+                "enable" : false
             }
         },
         "title" : "畅游看吧",
