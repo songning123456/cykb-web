@@ -415,7 +415,7 @@
 
         .mask-bottom {
             position: fixed;
-            height: 270rpx;
+            height: 284rpx;
             transition: all 0.2s;
             width: 100%;
             z-index: 1000;

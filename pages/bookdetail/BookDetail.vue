@@ -223,7 +223,7 @@
             bottom: 0;
             position: fixed;
             width: 100%;
-            border-top: 1px solid grey;
+            border-top: 1px solid rgba(0, 0, 0, 0.33);
         }
     }
 

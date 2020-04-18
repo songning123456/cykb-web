@@ -7,7 +7,7 @@
                     <view class="content">
                         <view class="desc">
                             <view class="text-black text-df">{{item.title || '未知书名'}}</view>
-                            <view class="text-grey text-sm">{{item.chapter || '未知章节'}}</view>
+                            <view class="text-grey text-sm text-cut">{{item.chapter || '未知章节'}}</view>
                         </view>
                         <view>
                             <view class="cu-tag bg-red light sm round">{{item.author || '未知作者'}}</view>
@@ -106,7 +106,7 @@
                 .content {
                     float: left;
                     left: 135rpx;
-                    width: calc(100% - 140rpx - 20rpx);
+                    width: calc(100% - 140rpx - 64rpx);
                     position: absolute;
                     line-height: 1.6em;
                 }

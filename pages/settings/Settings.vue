@@ -96,15 +96,7 @@
                     case 'nightMode':
                         break;
                     case 'storage':
-                        let allStorage = uni.getStorageInfoSync();
-                        let flag = false;
-                        for (let item of allStorage.keys) {
-                            if (item.includes('scrollInfo')) {
-                                flag = true;
-                                break;
-                            }
-                        }
-                        flag && uni.navigateTo({ url: '/pages/cache/NovelsCache'});
+                        uni.navigateTo({ url: '/pages/cache/NovelsCache'});
                         break;
                 }
             },
