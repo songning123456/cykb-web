@@ -131,27 +131,27 @@
             overflow: auto;
 
             .cu-card {
-                padding-bottom: 10upx;
+                padding-bottom: 10rpx;
 
                 .cu-item {
                     padding: unset;
                     background: unset;
 
                     .content {
-                        padding: 0 15upx;
+                        padding: 0 15rpx;
 
                         .image-size {
-                            width: 180upx;
-                            margin-top: 18upx;
+                            width: 180rpx;
+                            margin-top: 18rpx;
                             height: 8em;
-                            margin-right: 20upx;
-                            border-radius: 6upx;
+                            margin-right: 20rpx;
+                            border-radius: 6rpx;
                         }
 
                         .title {
                             padding: unset;
-                            height: 60upx;
-                            line-height: 72upx;
+                            height: 60rpx;
+                            line-height: 72rpx;
                         }
                     }
                 }

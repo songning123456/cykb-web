@@ -155,7 +155,7 @@
 
         .book-frame {
             width: 100%;
-            height: calc(100% - 102upx);
+            height: calc(100% - 102rpx);
             overflow-y: auto;
 
             .cu-card {
@@ -168,14 +168,14 @@
                     .image {
                         width: 100%;
                         height: 100%;
-                        padding: 30upx;
+                        padding: 30rpx;
                         box-sizing: border-box;
                         margin: unset;
 
                         .image-size {
-                            width: 165upx;
-                            height: 220upx;
-                            border-radius: 6upx;
+                            width: 165rpx;
+                            height: 220rpx;
+                            border-radius: 6rpx;
                         }
 
                         .cu-tag {
@@ -187,27 +187,27 @@
 
             .cu-list {
                 .max-width {
-                    max-width: 481.5upx;
+                    max-width: 481.5rpx;
                 }
             }
 
             .author-books {
                 white-space: nowrap; // 滚动必须加的属性
                 width: 100%;
-                padding: 20upx;
+                padding: 20rpx;
                 margin: 0 auto;
 
                 .author-book {
                     width: 24%;
-                    margin-right: 20upx;
+                    margin-right: 20rpx;
                     display: inline-block;
                     vertical-align: top;
 
                     .avatar-img {
                         display: inline-block;
-                        height: 220upx;
-                        width: 165upx;
-                        border-radius: 6upx;
+                        height: 220rpx;
+                        width: 165rpx;
+                        border-radius: 6rpx;
                         position: relative;
 
                         .custom-image {

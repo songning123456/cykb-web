@@ -110,7 +110,7 @@
             bottom: 0;
             position: fixed;
             width: 100%;
-            border-top: 1upx solid rgba(0, 0, 0, 0.33);
+            border-top: 1rpx solid rgba(0, 0, 0, 0.33);
             background-color: rgb(247, 246, 242);
             justify-content: center;
 

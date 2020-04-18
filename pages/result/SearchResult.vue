@@ -8,7 +8,7 @@
                 {{item.category + ' (共' + item.categoryTotal + '本)'}}
             </view>
         </scroll-view>
-        <view class="cu-list full-size" :style="loadType === 'classify' ? 'height: calc(100% - 90upx);':'height:100%'">
+        <view class="cu-list full-size" :style="loadType === 'classify' ? 'height: calc(100% - 90rpx);':'height:100%'">
             <scroll-view :scroll-top="scrollTop" scroll-y="true" @scrolltolower="scrollToBottom" style="height: 100%;">
                 <view class="cu-card article no-card" v-for="(item, index) in result" :key="index"
                       @tap="bookDetailBtn(item)">
@@ -168,34 +168,34 @@
 
         .search-classify {
             background-color: white;
-            height: 90upx;
+            height: 90rpx;
         }
 
         .cu-list {
             overflow: auto;
 
             .cu-card {
-                padding-bottom: 10upx;
+                padding-bottom: 10rpx;
 
                 .cu-item {
                     padding: unset;
                     background: unset;
 
                     .content {
-                        padding: 0 15upx;
+                        padding: 0 15rpx;
 
                         .image-size {
-                            width: 180upx;
-                            margin-top: 18upx;
+                            width: 180rpx;
+                            margin-top: 18rpx;
                             height: 8em;
-                            margin-right: 20upx;
-                            border-radius: 6upx;
+                            margin-right: 20rpx;
+                            border-radius: 6rpx;
                         }
 
                         .title {
                             padding: unset;
-                            height: 60upx;
-                            line-height: 72upx;
+                            height: 60rpx;
+                            line-height: 72rpx;
                         }
                     }
                 }

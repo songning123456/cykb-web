@@ -174,18 +174,18 @@
                     left: 48%;
                     right: unset;
                     color: #e54d42;
-                    top: 15upx;
+                    top: 15rpx;
                     background-color: unset;
                 }
 
                 .search-item {
                     justify-content: center;
                     text-align: center;
-                    padding: 30upx 0;
+                    padding: 30rpx 0;
 
                     .setting-source {
                         position: absolute;
-                        right: 36upx;
+                        right: 36rpx;
                     }
                 }
             }
@@ -196,20 +196,20 @@
             .our-searches {
                 white-space: nowrap; // 滚动必须加的属性
                 width: 100%;
-                padding: 20upx;
+                padding: 20rpx;
                 margin: 0 auto;
 
                 .our-search {
                     width: 24%;
-                    margin-right: 20upx;
+                    margin-right: 20rpx;
                     display: inline-block;
                     vertical-align: top;
 
                     .avatar-img {
                         display: inline-block;
-                        height: 220upx;
-                        width: 165upx;
-                        border-radius: 6upx;
+                        height: 220rpx;
+                        width: 165rpx;
+                        border-radius: 6rpx;
                         position: relative;
 
                         .custom-image {
@@ -230,7 +230,7 @@
 
                 .cu-item {
                     background-color: unset;
-                    min-height: 70upx;
+                    min-height: 70rpx;
 
                     &:after {
                         border-bottom: unset;

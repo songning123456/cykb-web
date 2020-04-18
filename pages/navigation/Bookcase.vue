@@ -24,7 +24,7 @@
                     </view>
                 </view>
             </scroll-view>
-            <view class="delete-bottom text-lg" :style="{bottom:isToDelete ? 0 : '-110upx'}">
+            <view class="delete-bottom text-lg" :style="{bottom:isToDelete ? 0 : '-110rpx'}">
                 <view class="left" @tap.stop="DelSetBtn('all')">{{deleteList.length !== result.length ? '全选' : '取消全选'}}</view>
                 <view class="right text-red" @tap.stop="DelSetBtn('delete')">删除{{deleteList.length ? '(' + deleteList.length + ')' : ''}}</view>
             </view>
@@ -238,24 +238,24 @@
                 background: unset;
                 position: relative;
                 display: flex;
-                height: 140upx;
+                height: 140rpx;
                 -webkit-box-align: center;
                 -webkit-align-items: center;
                 align-items: center;
 
                 .image-size {
-                    width: 105upx;
+                    width: 105rpx;
                 }
 
                 .cu-avatar {
                     float: left;
-                    left: 15upx;
+                    left: 15rpx;
                 }
 
                 .content {
                     float: left;
-                    left: 135upx;
-                    width: calc(100% - 140upx - 20upx);
+                    left: 135rpx;
+                    width: calc(100% - 140rpx - 20rpx);
                     position: absolute;
                     line-height: 1.6em;
                 }
@@ -279,7 +279,7 @@
             }
             .delete-bottom {
                 position: fixed;
-                height: 100upx;
+                height: 100rpx;
                 transition: all 0.2s;
                 width: 100%;
                 z-index: 1000;
@@ -289,18 +289,18 @@
                     height: 100%;
                     float: left;
                     text-align: center;
-                    line-height: 100upx;
-                    letter-spacing: 1upx;
-                    border-top: 1upx solid rgba(0, 0, 0, 0.33);
+                    line-height: 100rpx;
+                    letter-spacing: 1rpx;
+                    border-top: 1rpx solid rgba(0, 0, 0, 0.33);
                 }
 
                 .left {
                     width: 50%;
-                    border-right: 1upx solid rgba(0, 0, 0, 0.33);
+                    border-right: 1rpx solid rgba(0, 0, 0, 0.33);
                 }
 
                 .right {
-                    width: calc(50% - 1upx);
+                    width: calc(50% - 1rpx);
                 }
             }
         }

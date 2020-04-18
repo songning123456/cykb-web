@@ -89,24 +89,24 @@
                 background: unset;
                 position: relative;
                 display: flex;
-                height: 140upx;
+                height: 140rpx;
                 -webkit-box-align: center;
                 -webkit-align-items: center;
                 align-items: center;
 
                 .image-size {
-                    width: 105upx;
+                    width: 105rpx;
                 }
 
                 .cu-avatar {
                     float: left;
-                    left: 15upx;
+                    left: 15rpx;
                 }
 
                 .content {
                     float: left;
-                    left: 135upx;
-                    width: calc(100% - 140upx - 20upx);
+                    left: 135rpx;
+                    width: calc(100% - 140rpx - 20rpx);
                     position: absolute;
                     line-height: 1.6em;
                 }

@@ -75,7 +75,7 @@
             transform: translate(-50%, -50%);
 
             uni-input {
-                height: 70upx;
+                height: 70rpx;
                 margin-bottom: .8em;
 
                 .uni-input-wrapper {

@@ -1,8 +1,8 @@
 <template>
     <view>
         <view class="fixedView icon" @touchstart.stop="touchIcon" @touchmove.stop="moveIcon" @tap.stop="tapIcon"
-              :style="{left:iconPosition.left+'px',top:iconPosition.top+'px',width:iconSize.width+'upx',height:iconSize.height+'upx'}">
-            <image :src="icon_path" :style="{width:iconSize.width+'upx',height:iconSize.height+'upx'}"
+              :style="{left:iconPosition.left+'px',top:iconPosition.top+'px',width:iconSize.width+'rpx',height:iconSize.height+'rpx'}">
+            <image :src="icon_path" :style="{width:iconSize.width+'rpx',height:iconSize.height+'rpx'}"
                    mode="aspectFill"></image>
         </view>
     </view>

@@ -314,10 +314,10 @@
 
         .scroll-content {
             height: 100%;
-            padding: 0 16upx;
+            padding: 0 16rpx;
 
             .read-content {
-                min-height: 1250upx;
+                min-height: 1250rpx;
             }
         }
 
@@ -329,11 +329,11 @@
 
             .cuIcon-refresh {
                 text-align: center;
-                font-size: 100upx;
+                font-size: 100rpx;
             }
 
             .load-text {
-                font-size: 30upx;
+                font-size: 30rpx;
             }
         }
 
@@ -346,9 +346,9 @@
             z-index: 1000;
 
             .left-btn-border, .left-btn-border-2 {
-                line-height: 45upx;
-                width: 40upx;
-                height: 300upx;
+                line-height: 45rpx;
+                width: 40rpx;
+                height: 300rpx;
             }
 
             .left-btn-border:before, .left-btn-border-2:before {
@@ -376,9 +376,9 @@
             z-index: 1000;
 
             .right-btn-border, .right-btn-border-2 {
-                line-height: 45upx;
-                width: 40upx;
-                height: 300upx;
+                line-height: 45rpx;
+                width: 40rpx;
+                height: 300rpx;
             }
 
             .right-btn-border:before, .right-btn-border-2:before {
@@ -399,7 +399,7 @@
 
         .mask-top {
             position: fixed;
-            height: 81.5upx;
+            height: 81.5rpx;
             transition: all 0.2s;
             width: 100%;
             z-index: 1000;
@@ -415,7 +415,7 @@
 
         .mask-bottom {
             position: fixed;
-            height: 270upx;
+            height: 270rpx;
             transition: all 0.2s;
             width: 100%;
             z-index: 1000;
@@ -461,13 +461,13 @@
 
                 .v3-item {
                     height: 42px;
-                    padding: 0 30upx;
+                    padding: 0 30rpx;
                     display: flex;
                     justify-content: center;
                     align-items: center;
 
                     .cu-btn {
-                        width: 300upx;
+                        width: 300rpx;
                     }
                 }
             }
@@ -475,15 +475,15 @@
 
         /deep/ .node-title {
             font-weight: bold;
-            margin-bottom: 100upx;
+            margin-bottom: 100rpx;
         }
 
         /deep/ .node-content {
-            margin-bottom: 100upx;
+            margin-bottom: 100rpx;
         }
 
         .letter-space {
-            letter-spacing: 40upx;
+            letter-spacing: 40rpx;
         }
     }
 

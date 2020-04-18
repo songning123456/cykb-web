@@ -89,7 +89,7 @@
 
             .cu-avatar {
                 margin: auto;
-                width: 78upx;
+                width: 78rpx;
             }
 
             .classify-margin {

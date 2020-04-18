@@ -35,11 +35,11 @@
         width: 100%;
         align-items: center;
         color: #555555;
-        font-size: 24upx;
+        font-size: 24rpx;
 
         .empty-image {
-            width: 200upx !important;
-            margin-bottom: 50upx;
+            width: 200rpx !important;
+            margin-bottom: 50rpx;
         }
     }
 </style>
