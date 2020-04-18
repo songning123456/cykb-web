@@ -155,7 +155,7 @@
 
         .book-frame {
             width: 100%;
-            height: calc(100% - (100upx + env(safe-area-inset-bottom) / 2 + 1px));
+            height: calc(100% - 102upx);
             overflow-y: auto;
 
             .cu-card {
