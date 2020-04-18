@@ -8,7 +8,7 @@
                 </button>
             </view>
             <view class="read-content"
-                  :style="[{background:skin.pageBgColor,'font-size':skin.fontSize+'px','line-height':skin.lineHeight+'px','color':skin.fontColor}]">
+                  :style="[{background:skin.pageBgColor,'font-size':skin.fontSize * 2 + 'rpx','line-height':skin.lineHeight * 2+'rpx','color':skin.fontColor}]">
                 <rich-text :nodes="nodes"></rich-text>
             </view>
             <view class="load-again" v-if="JSON.stringify(this.chapterInfo) === '{}'" @tap="loadChapterInfoBtn">
@@ -355,7 +355,7 @@
                 right: 100%;
                 content: " ";
                 position: absolute;
-                border: 6px solid transparent;
+                border: 12rpx solid transparent;
             }
 
             .left-btn-border:before {
@@ -385,7 +385,7 @@
                 left: 100%;
                 content: " ";
                 position: absolute;
-                border: 6px solid transparent;
+                border: 12rpx solid transparent;
             }
 
             .right-btn-border:before {
@@ -404,11 +404,11 @@
             width: 100%;
             z-index: 1000;
             margin: auto;
-            border-radius: 0 0 4px 4px;
+            border-radius: 0 0 8rpx 8rpx;
             min-height: unset;
 
             .mask-title {
-                letter-spacing: 2px;
+                letter-spacing: 4rpx;
                 text-align: center;
             }
         }
@@ -420,8 +420,8 @@
             width: 100%;
             z-index: 1000;
             margin: auto;
-            border-radius: 10px 10px 0 0;
-            padding: 10px;
+            border-radius: 20rpx 20rpx 0 0;
+            padding: 20rpx;
             box-sizing: border-box;
 
             .v1 {
@@ -444,11 +444,11 @@
                 display: flex;
                 width: 100%;
                 justify-content: space-around;
-                margin-top: 10px;
+                margin-top: 20rpx;
 
                 .v2-circle {
-                    width: 26px;
-                    height: 26px;
+                    width: 52rpx;
+                    height: 52rpx;
                     border-radius: 50%;
                     display: flex;
                     justify-content: center;
@@ -457,10 +457,10 @@
             }
 
             .v3 {
-                margin-top: 10px;
+                margin-top: 20rpx;
 
                 .v3-item {
-                    height: 42px;
+                    height: 84rpx;
                     padding: 0 30rpx;
                     display: flex;
                     justify-content: center;
