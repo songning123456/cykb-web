@@ -1,6 +1,6 @@
 <template>
     <view class="book-detail full-screen">
-        <view class="book-frame">
+        <scroll-view scroll-y="true"  class="book-frame">
             <view class="cu-card case no-card margin-bottom-sm">
                 <view class="cu-item shadow">
                     <view class="image text-center">
@@ -49,7 +49,7 @@
                     </block>
                 </scroll-view>
             </view>
-        </view>
+        </scroll-view>
         <view class="bottom-bar bg-white">
             <view class="btn-group cu-bar tabbar">
                 <button class="cu-btn text-red line-red shadow" @tap="addBookcase">加入书架</button>
@@ -156,7 +156,6 @@
         .book-frame {
             width: 100%;
             height: calc(100% - 102rpx);
-            overflow-y: auto;
 
             .cu-card {
                 width: 100%;
@@ -223,6 +222,7 @@
             bottom: 0;
             position: fixed;
             width: 100%;
+            z-index: 10;
             border-top: 1px solid rgba(0, 0, 0, 0.33);
         }
     }
