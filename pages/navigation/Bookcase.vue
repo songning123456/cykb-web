@@ -9,7 +9,7 @@
                         <view class="text-grey text-sm">{{item.author || '未知作者'}}</view>
                         <view class="text-gray text-xs text-cut">
                             <text class="margin-right-xs">{{convertDate(item.updateTime)}} ·</text>
-                            <text>{{item.chapter || '未知章节'}}</text>
+                            <text>{{item.chapter || item.latestChapter || '未知章节'}}</text>
                         </view>
                     </view>
                     <view class="action delete-icon" v-if="isToDelete">
