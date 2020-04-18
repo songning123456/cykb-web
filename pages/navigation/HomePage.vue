@@ -9,7 +9,7 @@
                             <custom-image class="image-size" :url="item.coverUrl || 'http://'"></custom-image>
                             <view class="desc">
                                 <view class="title text-cut text-shadow">{{item.title || '未知书名'}}</view>
-                                <view class="text-content">{{item.introduction || '暂无简介...'}}</view>
+                                <view class="text-content">{{deleteAmpNbsp(item.introduction)}}</view>
                                 <view>
                                     <view class="cu-tag bg-red light sm round">{{item.author || '未知作者'}}</view>
                                     <view class="cu-tag bg-green light sm round">{{item.category || '未知类别'}}
@@ -94,6 +94,16 @@
             },
             scrollOn(e) {
                 this.oldScrollTop = e.detail.scrollTop;
+            },
+            deleteAmpNbsp(val) {
+                // 解决 飞库小说转义问题
+                if (val) {
+                    let delItem = '&nbsp;';
+                    let result = val.replace(new RegExp(delItem, 'g'), '');
+                    return result;
+                } else {
+                    return '暂无简介...';
+                }
             },
             scrollToBottom (e) {
                 if (this.scrollBottomStatus) {

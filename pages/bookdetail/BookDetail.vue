@@ -20,7 +20,7 @@
                     <text>简介</text>
                 </view>
                 <view class="content padding introduction">
-                    {{novels.introduction || '暂无简介...'}}
+                    {{deleteAmpNbsp(novels.introduction)}}
                 </view>
             </view>
             <view class="cu-list menu">
@@ -95,6 +95,16 @@
                         this.authorBooks = data.data.filter(item => item.title !== this.novels.title);
                     }
                 });
+            },
+            deleteAmpNbsp(val) {
+                // 解决 飞库小说转义问题
+                if (val) {
+                    let delItem = '&nbsp;';
+                    let result = val.replace(new RegExp(delItem, 'g'), '');
+                    return result;
+                } else {
+                    return '暂无简介...';
+                }
             },
             SimilarBookBtn (novels) {
                 this.$store.commit('SET_NAVIGATEPARAMS', {novels: novels});
