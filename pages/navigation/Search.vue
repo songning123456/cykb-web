@@ -88,7 +88,7 @@
                 let obj = {
                     authorOrTitle: e.text
                 };
-                this.searchHistory = this.searchHistory.filter(item => item.authorOrTitle !== e.detail.value);
+                this.searchHistory = this.searchHistory.filter(item => item.authorOrTitle !== e.text);
                 this.searchHistory.unshift(obj);
                 uni.setStorageSync('searchHistory', this.searchHistory);
                 this.$store.commit('SET_NAVIGATEPARAMS', {params: { type: 'searchResult', authorOrTitle: e.text }});
