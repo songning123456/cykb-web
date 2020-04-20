@@ -119,12 +119,14 @@
             }
         },
         onNavigationBarButtonTap(e) {
-            if (e.type === 'delete' && this.result.length) {
-                if (this.isToDelete) {
-                    this.isToDelete = false;
-                    this.deleteList = [];
-                } else {
-                    this.isToDelete = true;
+            if (e.type === 'delete') {
+                if (this.result.length) {
+                    if (this.isToDelete) {
+                        this.isToDelete = false;
+                        this.deleteList = [];
+                    } else {
+                        this.isToDelete = true;
+                    }
                 }
             }else {
                 if (!this.isToDelete) {
