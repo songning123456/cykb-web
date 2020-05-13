@@ -1,5 +1,5 @@
 let request = {};
-let host = 'https://cykbes.simple-blog.xyz/cykb';
+let host = 'http://cykb-server.sonin.cn/cykb';
 
 request.post = function (url, params) {
     return new Promise((resolve, reject) => {
