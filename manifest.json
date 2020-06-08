@@ -75,7 +75,7 @@
     "h5" : {
         "devServer" : {
             "port" : 8030,
-            "https" : false
+            "https" : true
         },
         "optimization" : {
             "treeShaking" : {

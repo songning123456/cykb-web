@@ -1,5 +1,5 @@
 let request = {};
-let host = 'http://unigateway.sonin.cn/cykb';
+let host = 'http://cykb-server.sonin.cn/cykb';
 
 request.post = function (url, params) {
     return new Promise((resolve, reject) => {
@@ -32,3 +32,5 @@ request.get = function (url, params) {
     });
 };
 export default request;
+
+
